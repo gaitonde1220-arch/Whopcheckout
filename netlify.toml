@@ -1,0 +1,3 @@
+# Netlify — publish the funnel site (index.html lives in funnel-site/, not repo root)
+[build]
+  publish = "funnel-site"
