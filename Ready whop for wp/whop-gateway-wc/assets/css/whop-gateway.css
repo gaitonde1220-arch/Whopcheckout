@@ -1,0 +1,63 @@
+/**
+ * Whop WooCommerce Gateway — Frontend Styles
+ */
+
+/* ── Reset/Override WooCommerce default payment box container ── */
+#payment div.payment_box.payment_method_whop,
+.woocommerce-checkout #payment div.payment_box.payment_method_whop {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  color: #27272a !important;
+  font-size: 13px !important;
+}
+
+/* Hide WooCommerce arrow pointer */
+#payment div.payment_box.payment_method_whop::before,
+#payment div.payment_box.payment_method_whop::after,
+.woocommerce-checkout #payment div.payment_box.payment_method_whop::before,
+.woocommerce-checkout #payment div.payment_box.payment_method_whop::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+}
+
+/* ── Whop Card internal styling ── */
+.whop-payment-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.whop-payment-card .whop-card-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  margin: 0 0 2px 0 !important;
+  line-height: 1.4 !important;
+}
+
+.whop-payment-card .whop-card-description {
+  font-size: 12px !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ── Sandbox badge ────────────────────────────────────────────────────── */
+.whop-payment-card .whop-sandbox-badge {
+  display: inline-flex !important;
+  align-self: flex-start !important;
+  align-items: center !important;
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+  margin-top: 6px !important;
+}

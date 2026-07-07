@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="WhopCheckout.com — Whop payment gateway for WooCommerce. No plan-id headaches. Dynamic checkout from your cart.">
+	<title>Whop Checkout Plugin — Whop Payment Gateway for WooCommerce</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="favicon.png">
+	<link rel="canonical" href="https://whopcheckout.com/">
+	<meta property="og:url" content="https://whopcheckout.com/">
+	<meta property="og:site_name" content="WhopCheckout.com">
+	<meta property="og:title" content="Whop Payment Gateway for WooCommerce">
+	<meta property="og:image" content="https://whopcheckout.com/logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<a class="logo" href="#top">
+				<img src="logo.png" alt="Whop CheckOut" class="logo-img" width="180" height="48">
+			</a>
+			<a class="btn btn-white" href="#pricing">Get Started</a>
+		</div>
+	</header>
+
+	<main id="top">
+		<!-- Hero -->
+		<section class="hero">
+			<div class="hero-grid-bg" aria-hidden="true"></div>
+			<div class="container">
+				<div class="hero-badge">
+					<span class="hero-badge-dot"></span>
+					Whop WooCommerce Plugin
+				</div>
+				<h1>Whop Payment Gateway for <span class="accent">WooCommerce</span></h1>
+				<p class="hero-lead">
+					Accept payments through Whop on your store — dynamic checkout from any cart. No plan-id headaches.
+				</p>
+				<div class="hero-actions">
+					<a class="btn btn-white btn-lg" href="#pricing">Get Plugin</a>
+					<a class="btn btn-outline-white btn-lg" href="#how">Learn More</a>
+				</div>
+				<div class="hero-stats">
+					<div class="hero-stat">
+						<strong>5 min</strong>
+						<span>Setup time</span>
+					</div>
+					<div class="hero-stat">
+						<strong>∞</strong>
+						<span>Products</span>
+					</div>
+					<div class="hero-stat">
+						<strong>100%</strong>
+						<span>Webhook verified</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Demo video -->
+		<section class="video-section section-white" id="demo">
+			<div class="container">
+				<span class="section-kicker">Watch demo</span>
+				<h2>See Whop Checkout in action</h2>
+				<div class="video-wrap" id="video-wrap">
+					<div class="video-placeholder" id="video-placeholder">
+						<span class="video-placeholder-icon" aria-hidden="true"></span>
+						<span>Demo video coming soon</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Problem -->
+		<section class="section section-problem">
+			<div class="container">
+				<span class="section-kicker">The problem</span>
+				<h2>Standard Whop embeds don't scale</h2>
+				<div class="problem-card">
+					<p>
+						Whop's checkout is powerful, but embedding it on WooCommerce has always meant creating a separate plan-id for every product, price point, and variant you sell.
+					</p>
+					<p>
+						For stores with multiple products or configurations, this quickly becomes unscalable and frustrating.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Solution -->
+		<section class="section section-solution">
+			<div class="container">
+				<span class="section-kicker">The solution</span>
+				<h2>A smarter way to checkout</h2>
+				<p class="section-desc">
+					WhopCheckout connects Whop directly to WooCommerce. The plugin auto-generates a checkout session for whatever's in the cart.
+				</p>
+				<div class="solution-box">
+					<p>Stop fighting with manual Whop plan IDs. Let the plugin handle checkout dynamically.</p>
+					<ul class="solution-checks">
+						<li>No manual plan-ids</li>
+						<li>No configuration bottlenecks</li>
+						<li>Just seamless payments</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why choose -->
+		<section class="section section-white" id="features">
+			<div class="container-wide">
+				<span class="section-kicker">Benefits</span>
+				<h2>Why WhopCheckout?</h2>
+				<div class="why-grid">
+					<div class="why-card">
+						<div class="card-icon" aria-hidden="true">🛡️</div>
+						<h3>High-Risk Processing</h3>
+						<p>Merchant-friendly Whop processing when Stripe or PayPal won't work for your vertical.</p>
+					</div>
+					<div class="why-card">
+						<div class="card-icon" aria-hidden="true">🚀</div>
+						<h3>Unlimited Products</h3>
+						<p>Sell digital or physical — no individual Whop checkout configs per product.</p>
+					</div>
+					<div class="why-card">
+						<div class="card-icon" aria-hidden="true">⚡</div>
+						<h3>5-Minute Setup</h3>
+						<p>Install, run the wizard, paste API keys, register webhook — go live same day.</p>
+					</div>
+					<div class="why-card">
+						<div class="card-icon" aria-hidden="true">🔄</div>
+						<h3>Auto Cart Total</h3>
+						<p>Reads your WooCommerce order total and creates the right Whop session every time.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How it works -->
+		<section class="section section-dark" id="how">
+			<div class="container">
+				<span class="section-kicker">Process</span>
+				<h2>How it works</h2>
+				<p class="section-desc">Five steps from cart to confirmed order.</p>
+				<div class="how-list">
+					<div class="how-step">
+						<div class="how-num">1</div>
+						<div class="how-body">
+							<h3>Customer adds products to cart</h3>
+							<p>Your customer browses your WooCommerce store and adds any products to their cart.</p>
+						</div>
+					</div>
+					<div class="how-step">
+						<div class="how-num">2</div>
+						<div class="how-body">
+							<h3>Select Whop at checkout</h3>
+							<p>At checkout, they select Whop Checkout as their payment method.</p>
+						</div>
+					</div>
+					<div class="how-step">
+						<div class="how-num">3</div>
+						<div class="how-body">
+							<h3>Plugin generates checkout session</h3>
+							<p>WhopCheckout automatically creates a Whop checkout session with the exact order total.</p>
+						</div>
+					</div>
+					<div class="how-step">
+						<div class="how-num">4</div>
+						<div class="how-body">
+							<h3>Customer completes payment</h3>
+							<p>The customer pays through Whop's secure hosted checkout — cards, crypto, and more.</p>
+						</div>
+					</div>
+					<div class="how-step">
+						<div class="how-num">5</div>
+						<div class="how-body">
+							<h3>Order confirmed automatically</h3>
+							<p>A signed webhook marks the order paid in WooCommerce. You're ready to fulfill.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Perfect for -->
+		<section class="section section-white">
+			<div class="container-wide">
+				<span class="section-kicker">Built for</span>
+				<h2>Perfect for</h2>
+				<div class="perfect-grid">
+					<div class="perfect-card">
+						<div class="card-icon card-icon-dark" aria-hidden="true">💎</div>
+						<h3>Digital Sellers</h3>
+					</div>
+					<div class="perfect-card">
+						<div class="card-icon card-icon-dark" aria-hidden="true">📦</div>
+						<h3>Physical Stores</h3>
+					</div>
+					<div class="perfect-card">
+						<div class="card-icon card-icon-dark" aria-hidden="true">⚠️</div>
+						<h3>High-Risk Niches</h3>
+					</div>
+					<div class="perfect-card">
+						<div class="card-icon card-icon-dark" aria-hidden="true">🎯</div>
+						<h3>Whop Sellers</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pricing -->
+		<section class="section section-pricing" id="pricing">
+			<div class="container-wide">
+				<span class="section-kicker">Pricing</span>
+				<h2>One simple price</h2>
+				<p class="pricing-sub">Lifetime access. Full plugin. Secure checkout.</p>
+				<div class="pricing-single">
+					<article class="pricing-card is-popular is-solo" data-plan="lifetime">
+						<span class="pricing-badge">Lifetime access</span>
+						<h3 class="plan-label">Whop Checkout</h3>
+						<p class="sub">WordPress plugin · 1 store</p>
+						<div class="price-block">
+							<div class="amount plan-price">$170</div>
+							<div class="period plan-period">one-time</div>
+						</div>
+						<ul class="pricing-features">
+							<li>Full plugin + setup wizard</li>
+							<li>One-click webhook registration</li>
+							<li>Sandbox &amp; health dashboard</li>
+							<li>Lifetime plugin access</li>
+							<li>Unlimited product configurations</li>
+							<li>Email support</li>
+						</ul>
+						<a class="btn btn-brand btn-lg btn-block plan-checkout" href="#">Get Lifetime — $170</a>
+						<p class="pricing-note plan-note">Pay once · Keep forever · Instant download</p>
+					</article>
+				</div>
+				<p class="pricing-secure">Secure payment · Instant delivery</p>
+			</div>
+		</section>
+
+		<!-- Final CTA -->
+		<section class="cta-final">
+			<div class="container">
+				<h2>Get Started Today</h2>
+				<p>Simple setup. Unlimited orders. No plan-id headaches.</p>
+				<a class="btn btn-white btn-lg" href="#pricing">Get Plugin Now</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p class="footer-brand">
+				© <span id="year"></span>
+				<a href="https://whopcheckout.com" class="js-site-url footer-logo-link">
+					<img src="logo.png" alt="Whop CheckOut" class="footer-logo" width="140" height="38">
+				</a>
+			</p>
+			<div class="footer-links">
+				<a class="js-support" href="mailto:hello@whopcheckout.com">hello@whopcheckout.com</a>
+				<a href="#pricing">Pricing</a>
+				<a href="#how">How it works</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="config.js"></script>
+	<script>
+	(function () {
+		var cfg = window.WHOP_FUNNEL || {};
+		var email = cfg.supportEmail || 'hello@whopcheckout.com';
+		var siteUrl = cfg.siteUrl || 'https://whopcheckout.com';
+
+		document.querySelectorAll('.js-site-url').forEach(function (el) {
+			el.href = siteUrl;
+		});
+
+		var plan = cfg.plan || {};
+		var checkoutBtn = document.querySelector('.plan-checkout');
+		var labelEl = document.querySelector('.plan-label');
+		var priceEl = document.querySelector('.plan-price');
+		var periodEl = document.querySelector('.plan-period');
+		var noteEl = document.querySelector('.plan-note');
+
+		if (labelEl && plan.label) labelEl.textContent = 'Whop Checkout';
+		if (priceEl && plan.price) priceEl.textContent = plan.price;
+		if (periodEl && plan.period) periodEl.textContent = plan.period;
+		if (noteEl && plan.note) noteEl.textContent = plan.note;
+		if (checkoutBtn && plan.checkoutUrl) {
+			checkoutBtn.href = plan.checkoutUrl;
+			checkoutBtn.setAttribute('rel', 'noopener');
+			if (plan.price) {
+				checkoutBtn.textContent = 'Get Lifetime — ' + plan.price;
+			}
+		}
+
+		document.querySelectorAll('.js-support').forEach(function (el) {
+			el.href = 'mailto:' + email;
+			el.textContent = email;
+		});
+
+		if (cfg.videoEmbedUrl) {
+			var wrap = document.getElementById('video-wrap');
+			var placeholder = document.getElementById('video-placeholder');
+			if (wrap && placeholder) {
+				placeholder.remove();
+				var iframe = document.createElement('iframe');
+				iframe.src = cfg.videoEmbedUrl;
+				iframe.title = 'Whop Checkout demo video';
+				iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+				iframe.allowFullscreen = true;
+				wrap.appendChild(iframe);
+			}
+		}
+
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		var header = document.querySelector('.site-header');
+		if (header) {
+			window.addEventListener('scroll', function () {
+				header.classList.toggle('is-scrolled', window.scrollY > 40);
+			}, { passive: true });
+		}
+	})();
+	</script>
+</body>
+</html>
