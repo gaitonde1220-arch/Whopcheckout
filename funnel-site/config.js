@@ -6,6 +6,14 @@ window.WHOP_FUNNEL = {
 	siteName: 'WhopCheckout.com',
 	supportEmail: 'hello@whopcheckout.com',
 
+	seo: {
+		title: 'Whop Checkout Plugin — Whop Payment Gateway for WooCommerce | WhopCheckout',
+		description: 'Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total. 5-minute setup, webhook verified, lifetime license.',
+		keywords: 'Whop WooCommerce plugin, Whop payment gateway, Whop checkout WooCommerce, WordPress Whop integration, dynamic Whop checkout, WooCommerce Whop payments',
+		ogImage: 'https://whopcheckout.com/og-image.jpg',
+		twitterHandle: '',
+	},
+
 	videoEmbedUrl: 'https://www.youtube.com/embed/fArc71Mr2ZI',
 
 	plan: {

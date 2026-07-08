@@ -1,0 +1,34 @@
+# WhopCheckout.com
+
+> Whop payment gateway plugin for WooCommerce — dynamic checkout from any cart total, no manual Whop plan IDs.
+
+WhopCheckout sells a WordPress/WooCommerce plugin that connects Whop payments to online stores. Customers pay through Whop's hosted checkout; orders are confirmed via signed webhooks.
+
+## Product
+
+- Name: Whop Checkout (WooCommerce plugin)
+- Price: $170 one-time, lifetime license
+- Site: https://whopcheckout.com/
+- Support: hello@whopcheckout.com
+
+## Key features
+
+- Dynamic Whop checkout sessions from WooCommerce cart totals
+- No separate Whop plan ID per product or variant
+- 5-minute setup wizard with API keys and webhook registration
+- Sandbox mode and connection health dashboard
+- Unlimited stores and product configurations
+
+## Requirements
+
+- WordPress 6+
+- WooCommerce 7+
+- HTTPS on production site
+- Buyer's own Whop business account and API keys
+
+## Pages
+
+- Home / sales page: https://whopcheckout.com/
+- Pricing: https://whopcheckout.com/#pricing
+- FAQ: https://whopcheckout.com/#faq
+- Demo video: https://whopcheckout.com/#demo

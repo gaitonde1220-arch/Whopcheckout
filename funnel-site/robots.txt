@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whopcheckout.com/sitemap.xml
+
+# AI / LLM crawlers (optional discovery file)
+# https://whopcheckout.com/llms.txt

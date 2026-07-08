@@ -3,33 +3,242 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-	<meta name="description" content="WhopCheckout.com — Whop payment gateway for WooCommerce. No plan-id headaches. Dynamic checkout from your cart.">
-	<title>Whop Checkout Plugin — Whop Payment Gateway for WooCommerce</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Whop Checkout Plugin — Whop Payment Gateway for WooCommerce | WhopCheckout</title>
+	<meta name="description" content="Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total. 5-minute setup, webhook verified, lifetime license — $170.">
+	<meta name="keywords" content="Whop WooCommerce plugin, Whop payment gateway, Whop checkout WooCommerce, WordPress Whop integration, dynamic Whop checkout, WooCommerce Whop payments, high risk payment gateway">
+	<meta name="author" content="WhopCheckout.com">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="googlebot" content="index, follow">
+	<meta name="theme-color" content="#ff6423">
+	<meta name="color-scheme" content="dark light">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="canonical" href="https://whopcheckout.com/">
+	<link rel="alternate" hreflang="en" href="https://whopcheckout.com/">
+	<link rel="alternate" hreflang="x-default" href="https://whopcheckout.com/">
+
 	<link rel="icon" href="favicon.png" type="image/png">
 	<link rel="apple-touch-icon" href="favicon.png">
-	<link rel="canonical" href="https://whopcheckout.com/">
+	<meta name="apple-mobile-web-app-title" content="WhopCheckout">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="https://whopcheckout.com/sitemap.xml">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://whopcheckout.com/">
 	<meta property="og:site_name" content="WhopCheckout.com">
-	<meta property="og:title" content="Whop Payment Gateway for WooCommerce">
-	<meta property="og:image" content="https://whopcheckout.com/logo.png">
+	<meta property="og:title" content="Whop Payment Gateway for WooCommerce — Whop Checkout Plugin">
+	<meta property="og:description" content="Dynamic Whop checkout for WooCommerce. No plan-id headaches. Accept payments from any cart total in 5 minutes.">
+	<meta property="og:image" content="https://whopcheckout.com/og-image.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="WhopCheckout — Whop WooCommerce payment gateway plugin">
+	<meta property="og:locale" content="en_US">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Whop Payment Gateway for WooCommerce">
+	<meta name="twitter:description" content="Dynamic Whop checkout for WooCommerce. No manual plan IDs. Lifetime license $170.">
+	<meta name="twitter:image" content="https://whopcheckout.com/og-image.jpg">
+	<meta name="twitter:image:alt" content="WhopCheckout — Whop payment gateway for WooCommerce">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://www.youtube.com">
+	<link rel="preconnect" href="https://i.ytimg.com">
+	<link rel="preload" href="styles.css" as="style">
+	<link rel="preload" href="logo.png" as="image" type="image/png">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebPage",
+				"@id": "https://whopcheckout.com/#webpage",
+				"url": "https://whopcheckout.com/",
+				"name": "Whop Checkout Plugin — Whop Payment Gateway for WooCommerce",
+				"description": "Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total.",
+				"isPartOf": { "@id": "https://whopcheckout.com/#website" },
+				"about": { "@id": "https://whopcheckout.com/#software" },
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://whopcheckout.com/og-image.jpg"
+				},
+				"inLanguage": "en-US"
+			},
+			{
+				"@type": "Product",
+				"@id": "https://whopcheckout.com/#product",
+				"name": "Whop Checkout WooCommerce Plugin",
+				"description": "WordPress plugin that connects Whop payments to WooCommerce with dynamic checkout sessions from cart totals.",
+				"image": "https://whopcheckout.com/og-image.jpg",
+				"brand": {
+					"@type": "Brand",
+					"name": "WhopCheckout"
+				},
+				"category": "WordPress Plugin",
+				"offers": {
+					"@type": "Offer",
+					"url": "https://whopcheckout.com/#pricing",
+					"price": "170.00",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock",
+					"priceValidUntil": "2027-12-31",
+					"itemCondition": "https://schema.org/NewCondition"
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": "https://whopcheckout.com/#breadcrumb",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "https://whopcheckout.com/"
+					}
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://whopcheckout.com/#website",
+				"url": "https://whopcheckout.com/",
+				"name": "WhopCheckout.com",
+				"description": "Whop payment gateway plugin for WooCommerce — dynamic checkout without manual plan IDs.",
+				"publisher": { "@id": "https://whopcheckout.com/#organization" },
+				"inLanguage": "en-US"
+			},
+			{
+				"@type": "Organization",
+				"@id": "https://whopcheckout.com/#organization",
+				"name": "WhopCheckout",
+				"url": "https://whopcheckout.com/",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://whopcheckout.com/logo.png"
+				},
+				"email": "hello@whopcheckout.com",
+				"sameAs": []
+			},
+			{
+				"@type": "SoftwareApplication",
+				"@id": "https://whopcheckout.com/#software",
+				"name": "Whop Checkout",
+				"alternateName": "WhopCheckout WooCommerce Plugin",
+				"description": "WordPress plugin that connects Whop payments to WooCommerce with dynamic checkout sessions from cart totals — no manual Whop plan IDs required.",
+				"applicationCategory": "BusinessApplication",
+				"applicationSubCategory": "WordPress Plugin",
+				"operatingSystem": "WordPress 6+, WooCommerce 7+",
+				"offers": {
+					"@type": "Offer",
+					"price": "170",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock",
+					"url": "https://whopcheckout.com/#pricing",
+					"priceValidUntil": "2027-12-31"
+				},
+				"featureList": [
+					"Dynamic Whop checkout from WooCommerce cart",
+					"One-click webhook registration",
+					"Sandbox testing mode",
+					"Setup wizard",
+					"Webhook-verified orders",
+					"Unlimited stores and products"
+				]
+			},
+			{
+				"@type": "VideoObject",
+				"@id": "https://whopcheckout.com/#video",
+				"name": "Whop Checkout Plugin Demo",
+				"description": "See how Whop Checkout connects Whop payments to WooCommerce.",
+				"thumbnailUrl": "https://img.youtube.com/vi/fArc71Mr2ZI/hqdefault.jpg",
+				"embedUrl": "https://www.youtube.com/embed/fArc71Mr2ZI",
+				"contentUrl": "https://www.youtube.com/watch?v=fArc71Mr2ZI",
+				"uploadDate": "2026-01-01"
+			},
+			{
+				"@type": "FAQPage",
+				"@id": "https://whopcheckout.com/#faq",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "What is Whop Checkout for WooCommerce?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It automatically creates a Whop checkout session from whatever is in the customer's cart — no separate Whop plan ID per product."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Do I need a Whop plan ID for every WooCommerce product?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "No. Whop Checkout generates checkout sessions dynamically from your cart total. You do not need to create individual Whop plan IDs for each product, price, or variant."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What are the requirements for Whop Checkout?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "You need WordPress 6 or newer, WooCommerce 7 or newer, HTTPS on your live site, and your own Whop business account with API keys. Classic WooCommerce checkout is required."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Does Whop Checkout support sandbox testing?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes. The plugin includes a sandbox mode and setup wizard so you can test orders end-to-end before going live with real payments."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How much does Whop Checkout cost?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Whop Checkout is a one-time payment of $170 for lifetime plugin access, unlimited stores, setup wizard, webhook registration, and email support."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Where do customer payments go?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Payments go to your Whop business account — not ours. You connect your own Whop API keys during the 5-minute setup wizard."
+						}
+					}
+				]
+			}
+		]
+	}
+	</script>
 </head>
 <body>
-	<header class="site-header">
+	<a class="skip-link" href="#main-content">Skip to content</a>
+	<header class="site-header" role="banner">
 		<div class="container">
-			<a class="logo" href="#top">
-				<img src="logo.png" alt="Whop CheckOut" class="logo-img" width="180" height="48">
+			<a class="logo" href="#top" aria-label="WhopCheckout home">
+				<img src="logo.png" alt="WhopCheckout — Whop WooCommerce payment gateway" class="logo-img" width="180" height="48" decoding="async">
 			</a>
+			<nav class="header-nav" aria-label="Primary">
+				<a href="#features">Features</a>
+				<a href="#how">How it works</a>
+				<a href="#demo">Demo</a>
+				<a href="#faq">FAQ</a>
+				<a href="#pricing">Pricing</a>
+			</nav>
 			<a class="btn btn-white" href="#pricing">Get Started</a>
 		</div>
 	</header>
 
-	<main id="top">
+	<main id="main-content">
 		<!-- Hero -->
-		<section class="hero">
+		<section class="hero" id="top">
 			<div class="hero-grid-bg" aria-hidden="true"></div>
 			<div class="container">
 				<div class="hero-badge hero-animate" style="--delay: 0s">
@@ -244,6 +453,53 @@
 			</div>
 		</section>
 
+		<!-- FAQ -->
+		<section class="section section-white reveal" id="faq" aria-labelledby="faq-heading">
+			<div class="container reveal">
+				<span class="section-kicker">FAQ</span>
+				<h2 id="faq-heading">Whop WooCommerce plugin — frequently asked questions</h2>
+				<p class="section-desc">Everything you need to know about Whop Checkout for WordPress and WooCommerce.</p>
+				<div class="faq-list">
+					<details class="faq-item" open>
+						<summary>What is Whop Checkout for WooCommerce?</summary>
+						<div class="faq-answer">
+							<p>Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It automatically creates a Whop checkout session from whatever is in the customer's cart — no separate Whop plan ID per product.</p>
+						</div>
+					</details>
+					<details class="faq-item">
+						<summary>Do I need a Whop plan ID for every WooCommerce product?</summary>
+						<div class="faq-answer">
+							<p>No. Whop Checkout generates checkout sessions dynamically from your cart total. You do not need to create individual Whop plan IDs for each product, price, or variant.</p>
+						</div>
+					</details>
+					<details class="faq-item">
+						<summary>What are the requirements for Whop Checkout?</summary>
+						<div class="faq-answer">
+							<p>You need WordPress 6 or newer, WooCommerce 7 or newer, HTTPS on your live site, and your own Whop business account with API keys. Classic WooCommerce checkout is required.</p>
+						</div>
+					</details>
+					<details class="faq-item">
+						<summary>Does Whop Checkout support sandbox testing?</summary>
+						<div class="faq-answer">
+							<p>Yes. The plugin includes a sandbox mode and setup wizard so you can test orders end-to-end before going live with real payments.</p>
+						</div>
+					</details>
+					<details class="faq-item">
+						<summary>How much does Whop Checkout cost?</summary>
+						<div class="faq-answer">
+							<p>Whop Checkout is a one-time payment of $170 for lifetime plugin access, unlimited stores, setup wizard, webhook registration, and email support.</p>
+						</div>
+					</details>
+					<details class="faq-item">
+						<summary>Where do customer payments go?</summary>
+						<div class="faq-answer">
+							<p>Payments go to your Whop business account — not ours. You connect your own Whop API keys during the 5-minute setup wizard.</p>
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+
 		<!-- Final CTA -->
 		<section class="cta-final reveal">
 			<div class="container reveal">
@@ -257,13 +513,16 @@
 	<footer class="site-footer">
 		<div class="container site-footer-inner">
 			<a href="https://whopcheckout.com" class="footer-logo-link js-site-url">
-				<img src="logo.png" alt="Whop CheckOut" class="footer-logo" width="140" height="38">
+				<img src="logo.png" alt="WhopCheckout — Whop WooCommerce payment gateway" class="footer-logo" width="140" height="38" loading="lazy" decoding="async">
 			</a>
-			<p class="footer-copy">© <span id="year"></span> WhopCheckout.com</p>
+			<p class="footer-copy">© <span id="year"></span> WhopCheckout.com — Whop payment gateway for WooCommerce</p>
 			<nav class="footer-nav" aria-label="Footer">
 				<a class="js-support" href="mailto:hello@whopcheckout.com">hello@whopcheckout.com</a>
-				<a href="#pricing">Pricing</a>
+				<a href="#features">Features</a>
 				<a href="#how">How it works</a>
+				<a href="#demo">Demo</a>
+				<a href="#faq">FAQ</a>
+				<a href="#pricing">Pricing</a>
 			</nav>
 		</div>
 	</footer>

@@ -1,3 +1,6 @@
 # Netlify — publish the funnel site (index.html lives in funnel-site/, not repo root)
 [build]
   publish = "funnel-site"
+
+# Security & SEO headers are in funnel-site/_headers
+# www → apex redirect is in funnel-site/_redirects
