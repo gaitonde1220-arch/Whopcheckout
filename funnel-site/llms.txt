@@ -1,6 +1,6 @@
 # WhopCheckout.com
 
-> Whop payment gateway plugin for WooCommerce — dynamic checkout from any cart total, no manual Whop plan IDs.
+> Whop payment gateway plugin for WooCommerce with dynamic checkout from any cart total, no manual Whop plan IDs.
 
 WhopCheckout sells a WordPress/WooCommerce plugin that connects Whop payments to online stores. Customers pay through Whop's hosted checkout; orders are confirmed via signed webhooks.
 

@@ -1,2 +1,2 @@
-# Canonical domain — use apex (no www)
+# Canonical domain: use apex (no www)
 https://www.whopcheckout.com/* https://whopcheckout.com/:splat 301!
