@@ -275,14 +275,64 @@ a { color: inherit; text-decoration: none; }
 	50% { opacity: 0.5; }
 }
 
-.hero h1 {
+.hero h1,
+.hero-title {
 	font-size: clamp(2.5rem, 6.5vw, 4.25rem);
 	font-weight: 800;
-	line-height: 1.05;
+	line-height: 1.12;
 	letter-spacing: -0.04em;
 	margin: 0 0 24px;
 	max-width: 820px;
 	margin-inline: auto;
+}
+
+.hero-title {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.2em 0.28em;
+}
+
+.hero-word {
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(28px) scale(0.96);
+	filter: blur(6px);
+	animation: heroWordIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	animation-delay: calc(0.1s + var(--i) * 0.08s);
+	color: var(--white);
+}
+
+.hero-word-accent {
+	background: linear-gradient(
+		105deg,
+		#ffffff 0%,
+		#ffb899 35%,
+		var(--brand-bright) 55%,
+		#ffffff 75%,
+		var(--brand-bright) 100%
+	);
+	background-size: 220% auto;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation:
+		heroWordIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+		accentShimmer 5s ease-in-out infinite;
+	animation-delay: calc(0.1s + var(--i) * 0.08s), 1.2s;
+}
+
+@keyframes heroWordIn {
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes accentShimmer {
+	0%, 100% { background-position: 0% center; }
+	50% { background-position: 100% center; }
 }
 
 .hero h1 .accent {
@@ -411,6 +461,21 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
 	.hero-animate {
 		opacity: 1;
+		animation: none;
+	}
+
+	.hero-word {
+		opacity: 1;
+		transform: none;
+		filter: none;
+		animation: none;
+		color: var(--white);
+	}
+
+	.hero-word-accent {
+		color: var(--brand-bright);
+		background: none;
+		-webkit-text-fill-color: unset;
 		animation: none;
 	}
 
