@@ -38,18 +38,28 @@ Target: LCP under 2.5s, CLS under 0.1.
 
 ## 6. Content & keywords (ongoing)
 
-Primary terms to rank for:
+Primary terms to rank for (your shop, not Whop.com brand alone):
 
-- Whop WooCommerce plugin
-- Whop payment gateway WooCommerce
-- Whop checkout WordPress
+- Whop WooCommerce plugin → `/whop-woocommerce-plugin.html`
+- Whop payment gateway → `/whop-payment-gateway.html`
+- Whop checkout WordPress → `/whop-checkout-wordpress.html`
 - dynamic Whop checkout
+- WooCommerce Whop payments
+- Whop plan ID WooCommerce
+
+After deploy:
+
+1. Google Search Console → submit `https://whopcheckout.com/sitemap.xml`
+2. Request indexing for homepage + the 3 keyword pages
+3. Validate FAQ/Product schema: https://search.google.com/test/rich-results
 
 Optional later:
 
 - Blog posts: setup guides, Whop vs manual plan IDs, high-risk WooCommerce payments
-- YouTube video title/description linking back to whopcheckout.com
+- YouTube title/description linking to whopcheckout.com
 - Backlinks from WordPress communities, Whop seller forums
+
+**Reality check:** Ranking for the single word “Whop” against Whop.com is unrealistic. Ranking for “Whop WooCommerce plugin / gateway / checkout” is the winning strategy.
 
 ## 7. Do not do
 

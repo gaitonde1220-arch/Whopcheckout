@@ -1,21 +1,27 @@
 # WhopCheckout.com — Sales funnel
 
-Competitor-style long-form landing page with **Whop orange** branding.
+Built on the **Habitline** Tailwind SaaS template (Unifato) with WhopCheckout product content.
 
-**Sales checkout:** [Lemon Squeezy](https://www.lemonsqueezy.com) (same as whopwoocommerce.com).  
-**Plugin purpose:** Lets store owners accept **Whop** payments on WooCommerce.
+**Theme assets:** `theme/images/` (from Habitline) · **Styles:** `habitline.css` (compiled Habitline Tailwind)
 
-## Sections (same flow as whopwoocommerce.com)
+**Sales checkout:** Lemon Squeezy via `config.js`  
+**Plugin purpose:** Accept Whop payments on WooCommerce without manual plan IDs.
 
-1. Hero + Get Started
-2. Demo video (add URL in `config.js`)
-3. Problem — Whop embeds / plan-id pain
-4. Solution — dynamic checkout
-5. Why Choose — 4 benefits
-6. How It Works — 5 steps
-7. Perfect For — 4 audiences
-8. Pricing — Lifetime $170
-9. Final CTA + footer
+## Preview
+
+```bash
+cd funnel-site && python3 -m http.server 8765
+```
+
+Open http://localhost:8765
+
+## Rebuild Habitline CSS (if you change the theme)
+
+```bash
+cd ../habitline-whopcheckout
+npx @tailwindcss/cli -i ./build-funnel.css -o ../funnel-site/habitline.css --minify
+```
+
 
 ## Config
 

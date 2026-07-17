@@ -1,809 +1,2464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Whop WooCommerce Plugin — Dynamic Whop Checkout Gateway | WhopCheckout</title>
+<meta name="description" content="Add Whop payments to WooCommerce without plan IDs. Dynamic Whop checkout from any cart total. Lifetime WooCommerce Whop plugin — $170, unlimited stores.">
+<meta name="keywords" content="Whop WooCommerce plugin, Whop payment gateway, Whop checkout WooCommerce, WooCommerce Whop, Whop WordPress plugin, Whop payments, dynamic Whop checkout, Whop plan ID, Whop webhook WooCommerce, accept Whop on WooCommerce, Whop high risk payments, Whop store plugin, buy Whop checkout plugin">
+<meta name="author" content="WhopCheckout.com">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#ff6423">
+<meta name="application-name" content="WhopCheckout">
+<link rel="canonical" href="https://whopcheckout.com/">
+<link rel="alternate" hreflang="en" href="https://whopcheckout.com/">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="sitemap" type="application/xml" href="https://whopcheckout.com/sitemap.xml">
 
-	<title>Whop Checkout Plugin for WooCommerce | WhopCheckout</title>
-	<meta name="description" content="Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total. 5-minute setup, webhook verified, lifetime license, $170.">
-	<meta name="keywords" content="Whop WooCommerce plugin, Whop payment gateway, Whop checkout WooCommerce, WordPress Whop integration, dynamic Whop checkout, WooCommerce Whop payments, high risk payment gateway">
-	<meta name="author" content="WhopCheckout.com">
-	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-	<meta name="googlebot" content="index, follow">
-	<meta name="theme-color" content="#ff6423">
-	<meta name="color-scheme" content="dark light">
-	<meta name="format-detection" content="telephone=no">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WhopCheckout">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://whopcheckout.com/">
+<meta property="og:title" content="Whop WooCommerce Plugin — Dynamic Whop Checkout | WhopCheckout">
+<meta property="og:description" content="Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total. Lifetime license $170.">
+<meta property="og:image" content="https://whopcheckout.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WhopCheckout — Whop payment gateway plugin for WooCommerce">
 
-	<link rel="canonical" href="https://whopcheckout.com/">
-	<link rel="alternate" hreflang="en" href="https://whopcheckout.com/">
-	<link rel="alternate" hreflang="x-default" href="https://whopcheckout.com/">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Whop WooCommerce Plugin — Dynamic Whop Checkout">
+<meta name="twitter:description" content="Add Whop as a WooCommerce payment gateway. No plan ID per product. Lifetime $170.">
+<meta name="twitter:image" content="https://whopcheckout.com/og-image.jpg">
+<meta name="twitter:image:alt" content="WhopCheckout WooCommerce Whop plugin">
 
-	<link rel="icon" href="favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="favicon.png">
-	<meta name="apple-mobile-web-app-title" content="WhopCheckout">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="https://whopcheckout.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://whopcheckout.com/#organization",
+      "name": "WhopCheckout",
+      "url": "https://whopcheckout.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://whopcheckout.com/logo.png"
+      },
+      "email": "hello@whopcheckout.com",
+      "description": "WhopCheckout is an independent third-party developer of a WooCommerce plugin for Whop payments. Not affiliated with or endorsed by Whop, Inc.",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://whopcheckout.com/#website",
+      "url": "https://whopcheckout.com/",
+      "name": "WhopCheckout",
+      "description": "Whop payment gateway plugin for WooCommerce",
+      "publisher": { "@id": "https://whopcheckout.com/#organization" },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://whopcheckout.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://whopcheckout.com/#webpage",
+      "url": "https://whopcheckout.com/",
+      "name": "Whop WooCommerce Plugin — Dynamic Whop Checkout Gateway",
+      "isPartOf": { "@id": "https://whopcheckout.com/#website" },
+      "about": { "@id": "https://whopcheckout.com/#software" },
+      "description": "Buy the official WhopCheckout WooCommerce plugin to accept Whop payments without manual plan IDs.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://whopcheckout.com/#software",
+      "name": "Whop Checkout for WooCommerce",
+      "alternateName": ["WhopCheckout", "Whop WooCommerce Plugin", "Whop Payment Gateway for WooCommerce"],
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Payment Gateway Plugin",
+      "operatingSystem": "WordPress, WooCommerce",
+      "url": "https://whopcheckout.com/",
+      "image": "https://whopcheckout.com/og-image.jpg",
+      "description": "WordPress/WooCommerce plugin that creates dynamic Whop checkout sessions from any cart total. No Whop plan ID per product. Webhook-verified orders, sandbox mode, unlimited stores.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whopcheckout.com/#pricing",
+        "price": "170",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2027-12-31",
+        "category": "Lifetime license"
+      },
+      "featureList": [
+        "Dynamic Whop checkout from WooCommerce cart totals",
+        "No Whop plan ID required per product",
+        "Webhook-verified order confirmation",
+        "Sandbox testing mode",
+        "5-minute setup wizard",
+        "Unlimited stores and products"
+      ],
+      "softwareRequirements": "WordPress 6+, WooCommerce 7+, HTTPS, Whop business API keys",
+      "author": { "@id": "https://whopcheckout.com/#organization" },
+      "publisher": { "@id": "https://whopcheckout.com/#organization" }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://whopcheckout.com/#product",
+      "name": "Whop Checkout Plugin for WooCommerce",
+      "description": "Lifetime Whop payment gateway plugin for WooCommerce. Dynamic checkout sessions, webhook verification, unlimited stores.",
+      "brand": { "@type": "Brand", "name": "WhopCheckout" },
+      "image": "https://whopcheckout.com/og-image.jpg",
+      "sku": "WHOP-CHECKOUT-LIFETIME",
+      "category": "WordPress Plugins > WooCommerce > Payment Gateways",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whopcheckout.com/#pricing",
+        "price": "170.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@id": "https://whopcheckout.com/#organization" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://whopcheckout.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Whop Checkout for WooCommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It creates a checkout session from the cart total — no plan ID per product."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a Whop plan ID for every product?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Checkout sessions are generated dynamically from your WooCommerce cart total, including coupons, shipping, and variants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the Whop WooCommerce plugin cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One-time payment of $170 for lifetime plugin access, unlimited stores, and email support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Whop Checkout support sandbox testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The plugin includes sandbox mode and a setup wizard so you can test Whop orders end-to-end before going live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do customer Whop payments go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Payments go to your Whop business account, not ours. You connect your own Whop API keys during the 5-minute setup wizard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Whop with WooCommerce for high-risk products?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many sellers use Whop when Stripe or PayPal restrict their niche. WhopCheckout connects your WooCommerce store to Whop so customers can pay with cards, crypto, and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free Whop WooCommerce plugin alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhopCheckout is a paid lifetime plugin ($170). Manual Whop plan embeds require a separate plan ID per product. WhopCheckout removes that spreadsheet with dynamic sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is WhopCheckout different from embedding Whop plan links?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manual Whop embeds need a separate plan ID for each product or price. WhopCheckout reads the live WooCommerce cart — coupons, shipping, bundles — and opens one matching Whop checkout session every time."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="habitline.css?v=rwd3">
+<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+<style>
+  /* ===== Responsive foundation — mobile-first (WCAG / Apple HIG / Material) ===== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  img, video, svg, iframe { max-width: 100%; height: auto; }
+  .container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: max(1rem, env(safe-area-inset-left)); }
+  @media (min-width: 768px) { .container { padding-inline: 1.5rem; } }
+  @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
 
-	<!-- Open Graph -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://whopcheckout.com/">
-	<meta property="og:site_name" content="WhopCheckout.com">
-	<meta property="og:title" content="Whop Payment Gateway for WooCommerce | Whop Checkout Plugin">
-	<meta property="og:description" content="Dynamic Whop checkout for WooCommerce. No plan-id headaches. Accept payments from any cart total in 5 minutes.">
-	<meta property="og:image" content="https://whopcheckout.com/og-image.jpg">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="WhopCheckout WooCommerce payment gateway plugin">
-	<meta property="og:locale" content="en_US">
+  /* Touch targets ≥ 44×44 (WCAG 2.2 Target Size / Apple HIG) */
+  .plan-checkout,
+  #navbar a,
+  #mobile-menu a,
+  header button,
+  [role="tab"],
+  .hs-accordion-toggle {
+    min-height: 44px;
+  }
+  #mobile-menu a { display: flex; align-items: center; min-height: 48px; padding: 0.75rem 1rem; }
 
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Whop Payment Gateway for WooCommerce">
-	<meta name="twitter:description" content="Dynamic Whop checkout for WooCommerce. No manual plan IDs. Lifetime license $170.">
-	<meta name="twitter:image" content="https://whopcheckout.com/og-image.jpg">
-	<meta name="twitter:image:alt" content="WhopCheckout Whop payment gateway for WooCommerce">
+  /* Logo */
+  .logo-img, img[src="logo.png"] { height: 28px; width: auto; }
+  @media (min-width: 768px) {
+    .logo-img, img[src="logo.png"] { height: 36px; }
+  }
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://www.youtube.com">
-	<link rel="preconnect" href="https://i.ytimg.com">
-	<link rel="preload" href="styles.css" as="style">
-	<link rel="preload" href="logo.png" as="image" type="image/png">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
+  /* Header breakpoints: <768 menu only · 768–1023 Buy now+menu · ≥1024 full nav */
+  .header-buy { display: none !important; }
+  @media (min-width: 768px) { .header-buy { display: inline-flex !important; } }
+  .nav-desktop { display: none !important; }
+  @media (min-width: 1024px) { .nav-desktop { display: block !important; } }
+  @media (min-width: 1024px) {
+    #menu-toggle { display: none !important; }
+  }
 
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "WebPage",
-				"@id": "https://whopcheckout.com/#webpage",
-				"url": "https://whopcheckout.com/",
-				"name": "Whop Checkout Plugin for WooCommerce",
-				"description": "Accept Whop payments on WooCommerce without manual plan IDs. Dynamic checkout from any cart total.",
-				"isPartOf": { "@id": "https://whopcheckout.com/#website" },
-				"about": { "@id": "https://whopcheckout.com/#software" },
-				"primaryImageOfPage": {
-					"@type": "ImageObject",
-					"url": "https://whopcheckout.com/og-image.jpg"
-				},
-				"inLanguage": "en-US"
-			},
-			{
-				"@type": "Product",
-				"@id": "https://whopcheckout.com/#product",
-				"name": "Whop Checkout WooCommerce Plugin",
-				"description": "WordPress plugin that connects Whop payments to WooCommerce with dynamic checkout sessions from cart totals.",
-				"image": "https://whopcheckout.com/og-image.jpg",
-				"brand": {
-					"@type": "Brand",
-					"name": "WhopCheckout"
-				},
-				"category": "WordPress Plugin",
-				"offers": {
-					"@type": "Offer",
-					"url": "https://whopcheckout.com/#pricing",
-					"price": "170.00",
-					"priceCurrency": "USD",
-					"availability": "https://schema.org/InStock",
-					"priceValidUntil": "2027-12-31",
-					"itemCondition": "https://schema.org/NewCondition"
-				}
-			},
-			{
-				"@type": "BreadcrumbList",
-				"@id": "https://whopcheckout.com/#breadcrumb",
-				"itemListElement": [
-					{
-						"@type": "ListItem",
-						"position": 1,
-						"name": "Home",
-						"item": "https://whopcheckout.com/"
-					}
-				]
-			},
-			{
-				"@type": "WebSite",
-				"@id": "https://whopcheckout.com/#website",
-				"url": "https://whopcheckout.com/",
-				"name": "WhopCheckout.com",
-				"description": "Whop payment gateway plugin for WooCommerce with dynamic checkout without manual plan IDs.",
-				"publisher": { "@id": "https://whopcheckout.com/#organization" },
-				"inLanguage": "en-US"
-			},
-			{
-				"@type": "Organization",
-				"@id": "https://whopcheckout.com/#organization",
-				"name": "WhopCheckout",
-				"url": "https://whopcheckout.com/",
-				"logo": {
-					"@type": "ImageObject",
-					"url": "https://whopcheckout.com/logo.png"
-				},
-				"email": "hello@whopcheckout.com",
-				"sameAs": []
-			},
-			{
-				"@type": "SoftwareApplication",
-				"@id": "https://whopcheckout.com/#software",
-				"name": "Whop Checkout",
-				"alternateName": "WhopCheckout WooCommerce Plugin",
-				"description": "WordPress plugin that connects Whop payments to WooCommerce with dynamic checkout sessions from cart totals. No manual Whop plan IDs required.",
-				"applicationCategory": "BusinessApplication",
-				"applicationSubCategory": "WordPress Plugin",
-				"operatingSystem": "WordPress 6+, WooCommerce 7+",
-				"offers": {
-					"@type": "Offer",
-					"price": "170",
-					"priceCurrency": "USD",
-					"availability": "https://schema.org/InStock",
-					"url": "https://whopcheckout.com/#pricing",
-					"priceValidUntil": "2027-12-31"
-				},
-				"featureList": [
-					"Dynamic Whop checkout from WooCommerce cart",
-					"One-click webhook registration",
-					"Sandbox testing mode",
-					"Setup wizard",
-					"Webhook-verified orders",
-					"Unlimited stores and products"
-				]
-			},
-			{
-				"@type": "VideoObject",
-				"@id": "https://whopcheckout.com/#video",
-				"name": "Whop Checkout Plugin Demo",
-				"description": "See how Whop Checkout connects Whop payments to WooCommerce.",
-				"thumbnailUrl": "https://img.youtube.com/vi/fArc71Mr2ZI/hqdefault.jpg",
-				"embedUrl": "https://www.youtube.com/embed/fArc71Mr2ZI",
-				"contentUrl": "https://www.youtube.com/watch?v=fArc71Mr2ZI",
-				"uploadDate": "2026-01-01"
-			},
-			{
-				"@type": "FAQPage",
-				"@id": "https://whopcheckout.com/#faq",
-				"mainEntity": [
-					{
-						"@type": "Question",
-						"name": "What is Whop Checkout for WooCommerce?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It automatically creates a Whop checkout session from whatever is in the customer's cart. No separate Whop plan ID per product."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Do I need a Whop plan ID for every WooCommerce product?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "No. Whop Checkout generates checkout sessions dynamically from your cart total. You do not need to create individual Whop plan IDs for each product, price, or variant."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "What are the requirements for Whop Checkout?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "You need WordPress 6 or newer, WooCommerce 7 or newer, HTTPS on your live site, and your own Whop business account with API keys. Classic WooCommerce checkout is required."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Does Whop Checkout support sandbox testing?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Yes. The plugin includes a sandbox mode and setup wizard so you can test orders end-to-end before going live with real payments."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "How much does Whop Checkout cost?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Whop Checkout is a one-time payment of $170 for lifetime plugin access, unlimited stores, setup wizard, webhook registration, and email support."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Where do customer payments go?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Payments go to your Whop business account, not ours. You connect your own Whop API keys during the 5-minute setup wizard."
-						}
-					}
-				]
-			}
-		]
-	}
-	</script>
+  /* Hero: copy stays above wave; wave only fades under mockups */
+  #top {
+    min-height: 100svh;
+    padding-bottom: 0;
+  }
+  #top .hero-copy {
+    position: relative;
+    z-index: 40;
+    text-shadow: 0 1px 18px rgba(0,0,0,0.55);
+  }
+  #top .hero-copy > p {
+    text-shadow: 0 1px 12px rgba(0,0,0,0.7);
+  }
+  #top .hero-wave {
+    height: 5rem;
+    opacity: 0.95;
+    bottom: -1px !important;
+    object-position: top center;
+  }
+  @media (min-width: 768px) {
+    #top .hero-wave { height: 9rem; }
+  }
+  @media (min-width: 1024px) {
+    #top .hero-wave { height: 12rem; }
+  }
+  #top h1 {
+    font-size: clamp(1.75rem, 4.2vw + 0.75rem, 5.625rem);
+    line-height: 1.08;
+    max-width: 18ch;
+    margin-inline: auto;
+  }
+  #top .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 22rem;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 40;
+  }
+  #top .hero-ctas > a { width: 100%; justify-content: center; min-height: 48px; }
+  #top .hero-ctas .hero-demo {
+    background: #111113 !important;
+    border: 1px solid rgba(255,255,255,0.28) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  }
+  #top .hero-lifetime {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.78);
+  }
+  @media (min-width: 640px) {
+    #top .hero-ctas {
+      flex-direction: row;
+      max-width: none;
+      width: auto;
+      align-items: center;
+    }
+    #top .hero-ctas > a { width: auto; }
+  }
+
+  /* Mockups: center only on mobile; side cards flow on tablet+ */
+  .hero-mockups {
+    width: 100%;
+    max-width: 64rem;
+    position: relative;
+    z-index: 40;
+    padding-bottom: 1.5rem;
+  }
+  .hero-mockups .wc-hero-card { width: 100%; max-width: 22rem; margin-inline: auto; }
+  .hero-mockups .hero-side { display: none !important; }
+  @media (min-width: 768px) {
+    .hero-mockups {
+      display: grid;
+      grid-template-columns: 1fr minmax(14rem, 20rem) 1fr;
+      align-items: start;
+      gap: 0.75rem;
+      padding-bottom: 2.5rem;
+    }
+    .hero-mockups .hero-side {
+      display: block !important;
+      position: relative !important;
+      inset: auto !important;
+      top: auto !important;
+      width: 100% !important;
+      max-width: 13rem;
+      margin-top: 1.5rem;
+    }
+    .hero-mockups .hero-side:first-child { justify-self: end; }
+    .hero-mockups .hero-side:last-child { justify-self: start; margin-top: 2.5rem; }
+    .hero-mockups > :nth-child(2) {
+      justify-self: center;
+      width: 100%;
+      max-width: 22rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-mockups {
+      grid-template-columns: 1fr minmax(18rem, 22rem) 1fr;
+      gap: 1.5rem;
+      padding-bottom: 3.5rem;
+    }
+    .hero-mockups .hero-side { max-width: 14rem; }
+  }
+
+  /* Phone mockup */
+  .wc-phone {
+    width: min(16rem, 78vw);
+    height: min(32rem, 70vh);
+    border-radius: 2rem;
+    background: #0c0c0e;
+    border: 6px solid #1a1a1e;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .wc-phone {
+      width: 18rem;
+      height: 36rem;
+      border-radius: 2.5rem;
+      border-width: 7px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .wc-phone {
+      width: 21.25rem;
+      height: 43.75rem;
+      border-radius: 2.75rem;
+    }
+  }
+  .wc-hero-card {
+    background: #111113;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  }
+
+  /* About phone + chips */
+  .about-visual { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  @media (min-width: 768px) { .about-visual { flex-wrap: nowrap; gap: 1.5rem; } }
+
+  /* Features grid */
+  #features .grid { gap: 1rem; }
+  @media (min-width: 768px) { #features .grid { gap: 1.5rem; } }
+  @media (min-width: 1024px) { #features .grid { gap: 1.875rem; } }
+
+  /* Sandbox person */
+  .min-h-100 { min-height: 22rem; }
+  .min-h-90 { min-height: 20rem; }
+  @media (min-width: 768px) {
+    .md\:min-h-125 { min-height: 31.25rem; }
+    .md\:min-h-110 { min-height: 27.5rem; }
+    .min-h-100 { min-height: 25rem; }
+  }
+  .sandbox-person {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    height: 58%;
+    width: auto;
+    max-width: 55%;
+    object-fit: contain;
+    object-position: bottom right;
+    pointer-events: none;
+    user-select: none;
+  }
+  @media (min-width: 768px) {
+    .sandbox-person { height: 68%; max-width: 48%; right: 0.25rem; }
+  }
+  @media (min-width: 1024px) {
+    .sandbox-person { height: 72%; max-width: 45%; }
+  }
+
+  /* Seller videos: horizontal scroll + snap (mobile/tablet) */
+  .seller-videos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    padding-bottom: 1rem;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    scrollbar-width: thin;
+  }
+  .seller-videos > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: min(17.5rem, 78vw);
+  }
+  @media (min-width: 768px) {
+    .seller-videos {
+      margin-inline: 0;
+      padding-inline: 0.25rem;
+      justify-content: flex-start;
+    }
+    .seller-videos > * { width: 18rem; }
+  }
+  @media (min-width: 1280px) {
+    .seller-videos { justify-content: center; }
+  }
+
+  /* Pricing / FAQ / footer responsive */
+  #pricing .plan-checkout,
+  #pricing a.group { width: 100%; max-width: 20rem; justify-content: center; }
+  @media (min-width: 768px) {
+    #pricing .plan-checkout,
+    #pricing a.group { width: auto; }
+  }
+  .hs-accordion-toggle { min-height: 52px; gap: 0.75rem; text-align: left; }
+  .hs-accordion-toggle h3 { padding-right: 0.5rem; }
+
+  /* Contrast on light surfaces */
+  .bg-body-bg .text-default-500,
+  .bg-white .text-default-500 { color: #374151; }
+  .bg-body-bg .text-default-400,
+  .bg-white .text-default-400 { color: #4b5563; }
+  .bg-body-bg .text-default-600,
+  .bg-white .text-default-600 { color: #4b5563; }
+  #navbar a { color: #1f2937; }
+
+  /* Fixed header: clear anchors */
+  section[id] { scroll-margin-top: 5.5rem; }
+  @media (min-width: 1024px) { section[id] { scroll-margin-top: 7rem; } }
+
+  /* Mobile menu panel */
+  #mobile-menu.is-open {
+    display: block !important;
+    opacity: 1;
+    transform: none;
+    top: calc(4.5rem + env(safe-area-inset-top));
+  }
+
+  /* How-it-works tabs: wrap on narrow screens */
+  [role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  [role="tab"] {
+    min-height: 44px;
+    padding-inline: 0.875rem;
+  }
+
+  /* Newsletter / forms */
+  input[type="email"] {
+    min-height: 48px;
+    font-size: 16px; /* avoid iOS zoom */
+  }
+
+  /* Decorative cloud art: contain within section (no page-level X scroll) */
+  section.overflow-hidden img[src*="cloud-"] {
+    max-width: none;
+  }
+  @media (max-width: 767px) {
+    #top { padding-top: 5.5rem; }
+    /* Stats $170 badge: avoid right-edge clip */
+    section.overflow-hidden .md\\:rotate-8 {
+      max-width: calc(100vw - 2rem);
+      white-space: normal;
+    }
+  }
+
+  /* On-site demo video modal */
+  #demo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(6px);
+  }
+  #demo-modal.is-open { display: flex; }
+  #demo-modal .demo-modal-dialog {
+    position: relative;
+    width: min(960px, 100%);
+    background: #0c0c0e;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.55);
+  }
+  #demo-modal .demo-modal-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+  #demo-modal iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  #demo-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #demo-modal-close:hover { background: rgba(255,255,255,0.28); }
+  /* Testimonials: compact horizontal swipe on mobile */
+  #testimonials {
+    padding-block: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    #testimonials { padding-block: 4rem; }
+  }
+  @media (min-width: 1024px) {
+    #testimonials { padding-block: 6rem; }
+  }
+  #testimonials .testimonials-clip {
+    position: relative;
+    max-height: 26rem;
+    overflow: hidden;
+  }
+  #testimonials .testimonials-clip::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 4.5rem;
+    background: linear-gradient(to top, #fff 10%, transparent);
+    pointer-events: none;
+    z-index: 2;
+  }
+  @media (min-width: 768px) {
+    #testimonials .testimonials-clip { max-height: 34rem; }
+  }
+  @media (min-width: 1024px) {
+    #testimonials .testimonials-clip {
+      max-height: 45rem; /* matches former lg:max-h-180 */
+    }
+  }
+  @media (max-width: 767px) {
+    #testimonials .testimonials-clip {
+      max-height: none;
+      overflow: visible;
+    }
+    #testimonials .testimonials-clip::after { display: none; }
+    #testimonials .testimonials-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.75rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      margin-inline: -1rem;
+      padding-inline: 1rem;
+      padding-bottom: 0.25rem;
+      scrollbar-width: thin;
+    }
+    #testimonials .testimonials-grid > div {
+      display: contents;
+    }
+    #testimonials .testimonials-grid .testimonial-card {
+      flex: 0 0 min(78vw, 17.5rem);
+      scroll-snap-align: start;
+      padding: 1rem !important;
+    }
+    #testimonials .testimonials-grid .testimonial-card p:first-child {
+      font-size: 0.875rem;
+      line-height: 1.4;
+      margin-bottom: 1rem !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    #testimonials .testimonials-grid .testimonial-card a.group {
+      display: none !important;
+    }
+  }
+</style>
 </head>
-<body>
-	<a class="skip-link" href="#main-content">Skip to content</a>
-	<header class="site-header" role="banner">
-		<div class="container">
-			<a class="logo" href="#top" aria-label="WhopCheckout home">
-				<img src="logo.png" alt="WhopCheckout WooCommerce payment gateway" class="logo-img" width="180" height="48" decoding="async">
-			</a>
-			<nav class="header-nav" aria-label="Primary">
-				<a href="#features">Features</a>
-				<a href="#how">How it works</a>
-				<a href="#demo">Demo</a>
-				<a href="#testimonials">Reviews</a>
-				<a href="#faq">FAQ</a>
-				<a href="#pricing">Pricing</a>
-			</nav>
-			<a class="btn btn-white" href="#pricing">Get Started</a>
-		</div>
-	</header>
+<body class="bg-body-bg">
+<!-- Navbar -->
+<header>
+    <div class="nav-sticky navbar fixed inset-x-0 top-0 z-120 w-full">
+        <div class="container lg:py-7.5 md:py-5 py-3.5">
+            <div class="flex items-center justify-between w-full lg:bg-transparent bg-white md:rounded-2xl rounded-lg">
+                <div class="lg:p-4 md:py-4 py-1.5 px-3 bg-white min-w-0 sm:min-w-[160px] flex rounded-[20px] lg:shadow-lg">
+                    <a href="#top" aria-label="WhopCheckout home">
+                        <img src="logo.png" alt="WhopCheckout" class="md:h-8 h-7.5">
+                    </a>
+                </div>
 
-	<main id="main-content">
-		<!-- Hero -->
-		<section class="hero" id="top">
-			<div class="hero-grid-bg" aria-hidden="true"></div>
-			<div class="container">
-				<div class="hero-badge hero-animate" style="--delay: 0s">
-					<span class="hero-badge-dot"></span>
-					Whop WooCommerce Plugin
-				</div>
-				<h1 class="hero-title" aria-label="Whop Payment Gateway for WooCommerce">
-					<span class="hero-word" style="--i: 0">Whop</span>
-					<span class="hero-word" style="--i: 1">Payment</span>
-					<span class="hero-word" style="--i: 2">Gateway</span>
-					<span class="hero-word" style="--i: 3">for</span>
-					<span class="hero-word hero-word-accent" style="--i: 4">WooCommerce</span>
-				</h1>
-				<p class="hero-lead hero-animate" style="--delay: 0.16s">
-					Accept payments through Whop on your store with dynamic checkout from any cart. No plan-id headaches.
-				</p>
-				<div class="hero-actions hero-animate" style="--delay: 0.24s">
-					<a class="btn btn-white btn-lg" href="#pricing">Get Plugin</a>
-					<a class="btn btn-outline-white btn-lg" href="#how">Learn More</a>
-				</div>
-				<div class="hero-stats hero-animate" style="--delay: 0.32s">
-					<p class="hero-stat-line">
-						<span class="hero-stat-item"><strong>5 min</strong> Setup time</span>
-						<span class="hero-stat-sep" aria-hidden="true">·</span>
-						<span class="hero-stat-item"><strong>∞</strong> Products</span>
-						<span class="hero-stat-sep" aria-hidden="true">·</span>
-						<span class="hero-stat-item"><strong>100%</strong> Webhook verified</span>
-					</p>
-				</div>
-			</div>
-		</section>
+                <div class="nav-desktop p-1.5 bg-white rounded-[20px] whitespace-nowrap lg:shadow-lg">
+                    <ul id="navbar" class="flex items-center">
+                        <li><a href="#features" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">Features</a></li>
+                        <li><a href="#how" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">How it works</a></li>
+                        <li><a href="#demo" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">Demo</a></li>
+                        <li><a href="#testimonials" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">Reviews</a></li>
+                        <li><a href="#faq" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">FAQ</a></li>
+                        <li><a href="#pricing" class="flex items-center justify-center text-sm font-medium hover:bg-default-200 hover:text-default-800 rounded-2xl transition-all py-4 px-5">Pricing</a></li>
+                    </ul>
+                </div>
 
-		<!-- Demo video -->
-		<section class="video-section section-white reveal" id="demo">
-			<div class="container reveal">
-				<span class="section-kicker">Watch demo</span>
-				<h2>See Whop Checkout in action</h2>
-				<div class="video-wrap" id="video-wrap">
-					<div class="video-placeholder" id="video-placeholder">
-						<span class="video-placeholder-icon" aria-hidden="true"></span>
-						<span>Demo video coming soon</span>
-					</div>
-				</div>
-			</div>
-		</section>
+                <div class="flex items-center gap-2 p-1.5 bg-white rounded-[20px] shadow-lg">
+                    <a href="#pricing" class="header-buy plan-checkout inline-flex items-center justify-center rounded-full bg-default-900 text-white text-sm font-medium px-5 py-3 hover:scale-95 transition-all">Buy now</a>
+                    <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-menu" data-hs-overlay="#mobile-menu" id="menu-toggle" aria-label="Open menu" class="lg:hidden flex size-11 items-center justify-center rounded-xl bg-default-200">
+                        <i class="iconify tabler--align-right size-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<!-- Problem -->
-		<section class="section section-problem reveal">
-			<div class="container reveal">
-				<span class="section-kicker">The problem</span>
-				<h2>Standard Whop embeds don't scale</h2>
-				<div class="problem-card">
-					<p>
-						Whop's checkout is powerful, but embedding it on WooCommerce has always meant creating a separate plan-id for every product, price point, and variant you sell.
-					</p>
-					<p>
-						For stores with multiple products or configurations, this quickly becomes unscalable and frustrating.
-					</p>
-				</div>
-			</div>
-		</section>
+    <div id="mobile-menu" class="hs-overlay hs-overlay-open:trandefault-y-0 md:hs-overlay-open:top-24 hs-overlay-open:top-18 hs-overlay-open:opacity-100 [--body-scroll:true] opacity-0 fixed inset-x-0 top-0 z-110 h-auto md:mx-5 mx-4 rounded-lg -trandefault-y-full transform overflow-hidden bg-white shadow-xl transition-all duration-300 hidden" role="dialog" tabindex="-1">
+        <div class="flex flex-col overflow-y-auto p-4 gap-1">
+            <a href="#features" class="p-2.5 text-base font-medium text-default-700">Features</a>
+            <a href="#how" class="p-2.5 text-base font-medium text-default-700">How it works</a>
+            <a href="#demo" class="p-2.5 text-base font-medium text-default-700">Demo</a>
+            <a href="#testimonials" class="p-2.5 text-base font-medium text-default-700">Reviews</a>
+            <a href="#faq" class="p-2.5 text-base font-medium text-default-700">FAQ</a>
+            <a href="#pricing" class="plan-checkout p-2.5 text-base font-medium text-default-900">Buy now · $170</a>
+        </div>
+    </div>
+</header>
 
-		<!-- Solution -->
-		<section class="section section-solution reveal">
-			<div class="container reveal">
-				<span class="section-kicker">The solution</span>
-				<h2>A smarter way to checkout</h2>
-				<p class="section-desc">
-					WhopCheckout connects Whop directly to WooCommerce. The plugin auto-generates a checkout session for whatever's in the cart.
-				</p>
-				<div class="solution-box">
-					<p>Stop fighting with manual Whop plan IDs. Let the plugin handle checkout dynamically.</p>
-					<ul class="solution-checks">
-						<li>No manual plan-ids</li>
-						<li>No configuration bottlenecks</li>
-						<li>Just seamless payments</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<!-- hero-section -->
+    <section id="top" class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black lg:pt-40 md:pt-32 pt-28 pb-0">
+        <!-- Background Image -->
+        <img src="theme/images/hero-image.jpg" alt="Hero Background" class="absolute inset-0 h-full w-full object-cover object-center" />
 
-		<!-- Why choose -->
-		<section class="section section-white reveal" id="features">
-			<div class="container-wide reveal">
-				<span class="section-kicker">Benefits</span>
-				<h2>Why WhopCheckout?</h2>
-				<div class="why-grid reveal-stagger">
-					<div class="why-card">
-						<div class="card-icon" aria-hidden="true">🛡️</div>
-						<h3>High-Risk Processing</h3>
-						<p>Merchant-friendly Whop processing when Stripe or PayPal won't work for your vertical.</p>
-					</div>
-					<div class="why-card">
-						<div class="card-icon" aria-hidden="true">🚀</div>
-						<h3>Unlimited Products</h3>
-						<p>Sell digital or physical with no individual Whop checkout configs per product.</p>
-					</div>
-					<div class="why-card">
-						<div class="card-icon" aria-hidden="true">⚡</div>
-						<h3>5-Minute Setup</h3>
-						<p>Install, run the wizard, paste API keys, register webhook and go live same day.</p>
-					</div>
-					<div class="why-card">
-						<div class="card-icon" aria-hidden="true">🔄</div>
-						<h3>Auto Cart Total</h3>
-						<p>Reads your WooCommerce order total and creates the right Whop session every time.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="container relative z-30 mx-auto px-4 flex flex-col items-center">
+            <div class="hero-copy flex flex-col items-center text-center">
+                <!-- Badge -->
+                <div class="lg:w-70 mb-4.5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 p-1.5 pe-2 backdrop-blur-md">
+                    <span class="rounded-full bg-black px-2 py-px text-base font-medium text-white">New</span>
 
-		<!-- How it works -->
-		<section class="section section-dark reveal" id="how">
-			<div class="container reveal">
-				<span class="section-kicker">Process</span>
-				<h2>How it works</h2>
-				<p class="section-desc">Five steps from cart to confirmed order.</p>
-				<div class="how-list reveal-stagger">
-					<div class="how-step">
-						<div class="how-num">1</div>
-						<div class="how-body">
-							<h3>Customer adds products to cart</h3>
-							<p>Your customer browses your WooCommerce store and adds any products to their cart.</p>
-						</div>
-					</div>
-					<div class="how-step">
-						<div class="how-num">2</div>
-						<div class="how-body">
-							<h3>Select Whop at checkout</h3>
-							<p>At checkout, they select Whop Checkout as their payment method.</p>
-						</div>
-					</div>
-					<div class="how-step">
-						<div class="how-num">3</div>
-						<div class="how-body">
-							<h3>Plugin generates checkout session</h3>
-							<p>WhopCheckout automatically creates a Whop checkout session with the exact order total.</p>
-						</div>
-					</div>
-					<div class="how-step">
-						<div class="how-num">4</div>
-						<div class="how-body">
-							<h3>Customer completes payment</h3>
-							<p>The customer pays through Whop's secure hosted checkout: cards, crypto, and more.</p>
-						</div>
-					</div>
-					<div class="how-step">
-						<div class="how-num">5</div>
-						<div class="how-body">
-							<h3>Order confirmed automatically</h3>
-							<p>A signed webhook marks the order paid in WooCommerce. You're ready to fulfill.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+                    <span class="text-sm text-white">Whop payments on WooCommerce</span>
+                </div>
 
-		<!-- Perfect for -->
-		<section class="section section-white reveal">
-			<div class="container-wide reveal">
-				<span class="section-kicker">Built for</span>
-				<h2>Perfect for</h2>
-				<div class="perfect-grid reveal-stagger">
-					<div class="perfect-card">
-						<div class="card-icon card-icon-dark" aria-hidden="true">💎</div>
-						<h3>Digital Sellers</h3>
-					</div>
-					<div class="perfect-card">
-						<div class="card-icon card-icon-dark" aria-hidden="true">📦</div>
-						<h3>Physical Stores</h3>
-					</div>
-					<div class="perfect-card">
-						<div class="card-icon card-icon-dark" aria-hidden="true">⚠️</div>
-						<h3>High-Risk Niches</h3>
-					</div>
-					<div class="perfect-card">
-						<div class="card-icon card-icon-dark" aria-hidden="true">🎯</div>
-						<h3>Whop Sellers</h3>
-					</div>
-				</div>
-			</div>
-		</section>
+                <!-- Title -->
+                <h1 class="font-medium leading-tight tracking-tight text-white lg:text-[90px] md:text-5xl text-4xl lg:mb-7.5 mb-5">
+                    Dynamic Whop checkout
+                    <br class="lg:block hidden" />
+                    for any Woo cart
+                </h1>
 
-		<!-- Testimonials -->
-		<section class="section section-testimonials reveal" id="testimonials" aria-labelledby="testimonials-heading">
-			<div class="container testimonials-intro reveal">
-				<span class="section-kicker">Reviews</span>
-				<h2 id="testimonials-heading">Sellers running Whop on WooCommerce</h2>
-				<p class="section-desc">Digital sellers, agencies, and high-risk store owners who ditched manual plan IDs.</p>
-			</div>
-			<div class="testimonials-stage" aria-label="Customer testimonials carousel">
-				<div class="testimonials-fade testimonials-fade--left" aria-hidden="true"></div>
-				<div class="testimonials-fade testimonials-fade--right" aria-hidden="true"></div>
-				<div class="testimonials-row">
-					<div class="testimonials-track" data-marquee data-speed="78">
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">I had 47 products and was dreading a separate Whop plan for each one. Installed on a Saturday, ran the wizard, first test order before lunch.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">MT</span>
-								<span class="testimonial-author"><strong>Marcus T.</strong><span>Digital course creator · Austin, TX</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Stripe shut us down twice for CBD SKUs. Whop checkout stayed live. First month we cleared $41k without a single processor freeze or held payout.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">VH</span>
-								<span class="testimonial-author"><strong>Victor H.</strong><span>High-risk CBD brand · Portland, OR</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">We sell Discord memberships and one-off coaching packs on one store. Cart total flows to Whop perfectly. No manual price matching on our end.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">JK</span>
-								<span class="testimonial-author"><strong>James K.</strong><span>Community &amp; coaching · Denver, CO</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">We deploy this on client Woo sites now. The health dashboard alone cut our support tickets. Webhook status is right there, no log diving.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">PM</span>
-								<span class="testimonial-author"><strong>Priya M.</strong><span>WordPress agency owner · Toronto</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Supplements is a tough vertical for payments. This was the first setup where checkout didn't feel held together with duct tape and workarounds.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">AL</span>
-								<span class="testimonial-author"><strong>Andre L.</strong><span>High-risk supplement store · Atlanta, GA</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">I'm not technical at all. The wizard walked me through API keys and webhook registration step by step. Whole thing took about six minutes.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">SW</span>
-								<span class="testimonial-author"><strong>Sophie W.</strong><span>Notion template shop · London, UK</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">PayPal flagged our vape juice line overnight. Switched to Whop on Woo with dynamic cart totals, no plan per nicotine strength. Back selling in under a day.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">RM</span>
-								<span class="testimonial-author"><strong>Rico M.</strong><span>High-risk vape &amp; e-liquid · Las Vegas, NV</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Sandbox mode let us run 20-plus test orders before flipping live. Caught a shipping plugin conflict early, worth it before real money moved.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">HB</span>
-								<span class="testimonial-author"><strong>Hannah B.</strong><span>SaaS add-on seller · Seattle, WA</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Forex signal subs get chargeback-heavy with normal gateways. Whop handles the risk side. We just sell tiers in Woo and checkout passes the exact membership total.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">TN</span>
-								<span class="testimonial-author"><strong>Tyler N.</strong><span>High-risk trading signals · Chicago, IL</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">We run three Woo brands under one license. Same plugin, unlimited stores, already live on our beauty box site and two digital storefronts.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">ML</span>
-								<span class="testimonial-author"><strong>Mei L.</strong><span>Multi-brand operator · Vancouver, BC</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Herbal botanicals is a nightmare category for mainstream PSPs. Whop checkout on Woo finally gave us a stack that doesn't die every time we add a new strain variant.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">KW</span>
-								<span class="testimonial-author"><strong>Keisha W.</strong><span>High-risk botanicals shop · Houston, TX</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">First real payment hit Whop and Woo order #1847 marked paid within seconds. That's when I finally stopped worrying about webhooks.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">NV</span>
-								<span class="testimonial-author"><strong>Natalia V.</strong><span>Digital art marketplace · Barcelona</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Weight-loss nutraceuticals. Every processor wanted reserves we couldn't afford. Whop + this plugin let us launch 12 SKUs without building a separate plan for each bottle size.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">DS</span>
-								<span class="testimonial-author"><strong>Dana S.</strong><span>High-risk nutraceutical brand · Tampa, FL</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Sold a $497 bundle yesterday with a coupon applied. Plugin passed the exact discounted total with no rounding errors, no failed sessions.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">JH</span>
-								<span class="testimonial-author"><strong>Jasmine H.</strong><span>Business coaching packages · NYC</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card">
-							<blockquote class="testimonial-quote">Support answered my sandbox API question same day. Plugin's been solid three weeks live, about 140 orders and zero checkout failures so far.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">OS</span>
-								<span class="testimonial-author"><strong>Omar S.</strong><span>Gaming mods store · Berlin, DE</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<div class="testimonials-row testimonials-row--reverse">
-					<div class="testimonials-track" data-marquee data-speed="92">
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">Stripe shut us down twice for CBD SKUs. Whop checkout stayed live. First month we cleared $41k without a processor freeze.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">VH</span>
-								<span class="testimonial-author"><strong>Victor H.</strong><span>High-risk CBD brand · Portland, OR</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">Supplements is a tough vertical for payments. This was the first setup where checkout didn't feel held together with duct tape.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">AL</span>
-								<span class="testimonial-author"><strong>Andre L.</strong><span>High-risk supplement store · Atlanta, GA</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">PayPal flagged our vape juice line overnight. Whop on Woo with dynamic cart totals, no plan per nicotine strength. Back selling in under a day.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">RM</span>
-								<span class="testimonial-author"><strong>Rico M.</strong><span>High-risk vape &amp; e-liquid · Las Vegas, NV</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">Forex signal subs get chargeback-heavy with normal gateways. Whop handles the risk. We sell tiers in Woo and checkout passes the exact total.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">TN</span>
-								<span class="testimonial-author"><strong>Tyler N.</strong><span>High-risk trading signals · Chicago, IL</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">Weight-loss nutraceuticals. Every processor wanted reserves we couldn't afford. Launched 12 SKUs without a separate Whop plan per bottle size.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">DS</span>
-								<span class="testimonial-author"><strong>Dana S.</strong><span>High-risk nutraceutical brand · Tampa, FL</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-						<figure class="testimonial-card testimonial-card--alt">
-							<blockquote class="testimonial-quote">Herbal botanicals is a nightmare for mainstream PSPs. Whop checkout finally gave us a stack that doesn't die when we add new variants.</blockquote>
-							<figcaption class="testimonial-meta">
-								<span class="testimonial-avatar" aria-hidden="true">KW</span>
-								<span class="testimonial-author"><strong>Keisha W.</strong><span>High-risk botanicals shop · Houston, TX</span></span>
-								<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-			</div>
-		</section>
+                <!-- Description -->
+                <p class="lg:mb-8 mb-5 max-w-md text-lg leading-normal text-white md:text-xl">
+                    Accept Whop payments from any cart total. No plan-id per product. 5-minute setup.
+                </p>
 
-		<!-- Pricing -->
-		<section class="section section-pricing reveal" id="pricing">
-			<div class="container-wide reveal">
-				<span class="section-kicker">Pricing</span>
-				<h2>One simple price</h2>
-				<p class="pricing-sub">Lifetime access. Full plugin. Secure checkout.</p>
-				<div class="pricing-single">
-					<article class="pricing-card is-popular is-solo" data-plan="lifetime">
-						<span class="pricing-badge">Lifetime access</span>
-						<h3 class="plan-label">Whop Checkout</h3>
-						<p class="sub">WordPress plugin · unlimited stores</p>
-						<div class="price-block">
-							<div class="amount plan-price">$170</div>
-							<div class="period plan-period">one-time</div>
-						</div>
-						<ul class="pricing-features">
-							<li>Full plugin + setup wizard</li>
-							<li>One-click webhook registration</li>
-							<li>Sandbox &amp; health dashboard</li>
-							<li>Lifetime plugin access</li>
-							<li>Unlimited product configurations</li>
-							<li>Email support</li>
-						</ul>
-						<a class="btn btn-brand btn-lg btn-block plan-checkout" href="#">Get Lifetime for $170</a>
-						<p class="pricing-note plan-note">Pay once · Keep forever · Instant download</p>
-					</article>
-				</div>
-				<p class="pricing-secure">Secure payment · Instant delivery</p>
-			</div>
-		</section>
+                <!-- Buttons -->
+                <div class="hero-ctas flex items-center justify-center md:gap-5 gap-2">
+                    <a href="#pricing" class="plan-checkout group relative overflow-hidden rounded-full bg-white md:px-8.5 px-5 py-3 md:py-4 md:text-lg text-sm font-medium text-black transition-all duration-300 hover:scale-95">
+                        <span class="relative block overflow-hidden">
+                            <span class="block transition-transform duration-300 group-hover:-translate-y-full">Buy now · $170</span>
+                            <span class="absolute left-0 top-full block transition-transform duration-300 group-hover:-translate-y-full">Buy now · $170</span>
+                        </span>
+                    </a>
 
-		<!-- FAQ -->
-		<section class="section section-white reveal" id="faq" aria-labelledby="faq-heading">
-			<div class="container reveal">
-				<span class="section-kicker">FAQ</span>
-				<h2 id="faq-heading">Whop WooCommerce plugin FAQ</h2>
-				<p class="section-desc">Everything you need to know about Whop Checkout for WordPress and WooCommerce.</p>
-				<div class="faq-list">
-					<details class="faq-item" open>
-						<summary>What is Whop Checkout for WooCommerce?</summary>
-						<div class="faq-answer">
-							<p>Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It automatically creates a Whop checkout session from whatever is in the customer's cart. No separate Whop plan ID per product.</p>
-						</div>
-					</details>
-					<details class="faq-item">
-						<summary>Do I need a Whop plan ID for every WooCommerce product?</summary>
-						<div class="faq-answer">
-							<p>No. Whop Checkout generates checkout sessions dynamically from your cart total. You do not need to create individual Whop plan IDs for each product, price, or variant.</p>
-						</div>
-					</details>
-					<details class="faq-item">
-						<summary>What are the requirements for Whop Checkout?</summary>
-						<div class="faq-answer">
-							<p>You need WordPress 6 or newer, WooCommerce 7 or newer, HTTPS on your live site, and your own Whop business account with API keys. Classic WooCommerce checkout is required.</p>
-						</div>
-					</details>
-					<details class="faq-item">
-						<summary>Does Whop Checkout support sandbox testing?</summary>
-						<div class="faq-answer">
-							<p>Yes. The plugin includes a sandbox mode and setup wizard so you can test orders end-to-end before going live with real payments.</p>
-						</div>
-					</details>
-					<details class="faq-item">
-						<summary>How much does Whop Checkout cost?</summary>
-						<div class="faq-answer">
-							<p>Whop Checkout is a one-time payment of $170 for lifetime plugin access, unlimited stores, setup wizard, webhook registration, and email support.</p>
-						</div>
-					</details>
-					<details class="faq-item">
-						<summary>Where do customer payments go?</summary>
-						<div class="faq-answer">
-							<p>Payments go to your Whop business account, not ours. You connect your own Whop API keys during the 5-minute setup wizard.</p>
-						</div>
-					</details>
-				</div>
-			</div>
-		</section>
+                     <a href="#demo-modal" data-open-demo class="hero-demo group relative overflow-hidden rounded-full border border-white/20 bg-white/5 md:px-8.5 px-5 py-3 md:py-4 md:text-lg text-sm text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:scale-95">
+                        <div class="relative flex items-center gap-3 overflow-hidden">
+                            <div class="flex items-center gap-3 transition-transform duration-300 group-hover:-translate-y-full">
+                                <i class="iconify tabler--player-play-filled text-white md:size-6 size-4"></i>
+                                <span class="font-medium">Watch Demo</span>
+                            </div>
+                            <div class="absolute left-0 top-full flex items-center gap-3 transition-transform duration-300 group-hover:-translate-y-full">
+                                <i class="iconify tabler--player-play-filled text-white md:size-6 size-4"></i>
+                                <span class="font-medium">Watch Demo</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <p class="hero-lifetime">One-time purchase · Lifetime · Unlimited stores</p>
+            </div>
 
-		<!-- Final CTA -->
-		<section class="cta-final reveal">
-			<div class="container reveal">
-				<h2>Get Started Today</h2>
-				<p>Simple setup. Unlimited orders. No plan-id headaches.</p>
-				<a class="btn btn-white btn-lg" href="#pricing">Get Plugin Now</a>
-			</div>
-		</section>
-	</main>
+                <!-- Product mockup: Woo cart → Whop checkout (above wave) -->
+                <div class="hero-mockups relative z-30 mt-8 md:mt-10 lg:mt-12 w-full max-w-5xl px-2">
+                    <div class="hero-side wc-hero-card p-4 text-left">
+                        <p class="text-[10px] uppercase tracking-wider text-white/40 mb-3">WooCommerce cart</p>
+                        <div class="flex justify-between text-sm text-white/80 py-2 border-b border-white/10"><span>Course access</span><span>$97</span></div>
+                        <div class="flex justify-between text-sm text-white/80 py-2 border-b border-white/10"><span>Coaching add-on</span><span>$49</span></div>
+                        <div class="flex justify-between text-sm text-white font-semibold pt-2"><span>Total</span><span>$146</span></div>
+                    </div>
 
-	<footer class="site-footer">
-		<div class="container site-footer-inner">
-			<a href="https://whopcheckout.com" class="footer-logo-link js-site-url">
-				<img src="logo.png" alt="WhopCheckout WooCommerce payment gateway" class="footer-logo" width="140" height="38" loading="lazy" decoding="async">
-			</a>
-			<p class="footer-copy">© <span id="year"></span> WhopCheckout.com, Whop payment gateway for WooCommerce</p>
-			<nav class="footer-nav" aria-label="Footer">
-				<a class="js-support footer-email" href="mailto:hello@whopcheckout.com">hello@whopcheckout.com</a>
-				<div class="footer-nav-links">
-					<a href="#features">Features</a>
-					<a href="#demo">Demo</a>
-					<a href="#how">How it works</a>
-					<a href="#faq">FAQ</a>
-					<a href="#pricing">Pricing</a>
-					<a class="footer-link-reviews" href="#testimonials">Reviews</a>
-				</div>
-			</nav>
-		</div>
-	</footer>
+                    <div class="relative z-10 w-full max-w-sm wc-hero-card overflow-hidden text-left">
+                        <div class="px-5 pt-5 pb-2">
+                            <p class="text-sm font-semibold text-white mb-3">Whop Checkout</p>
+                            <div class="flex justify-between items-baseline mb-4">
+                                <span class="text-sm text-white/50">Order total</span>
+                                <span class="text-3xl font-semibold text-white tracking-tight">$146.00</span>
+                            </div>
+                            <div class="w-full rounded-full bg-white text-black text-center text-sm font-semibold py-3.5 mb-3">Pay with Whop</div>
+                            <div class="flex justify-center gap-2 pb-5">
+                                <span class="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/60">Cards</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/60">Crypto</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/60">More</span>
+                            </div>
+                        </div>
+                    </div>
 
-	<script src="config.js"></script>
-	<script>
-	(function () {
-		var cfg = window.WHOP_FUNNEL || {};
-		var email = cfg.supportEmail || 'hello@whopcheckout.com';
-		var siteUrl = cfg.siteUrl || 'https://whopcheckout.com';
+                    <div class="hero-side wc-hero-card p-4 text-left">
+                        <div class="size-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-lg font-bold mb-2">✓</div>
+                        <p class="text-sm font-semibold text-white">Order confirmed</p>
+                        <p class="text-xs text-white/50 mt-1">Webhook marked paid in Woo</p>
+                    </div>
+                </div>
+        </div>
 
-		document.querySelectorAll('.js-site-url').forEach(function (el) {
-			el.href = siteUrl;
-		});
+        <img src="theme/images/vector-01.webp" alt="" class="hero-wave w-full absolute -bottom-2 left-0 right-0 z-10 pointer-events-none object-cover object-top" />
+    </section>
 
-		var plan = cfg.plan || {};
-		var checkoutBtn = document.querySelector('.plan-checkout');
-		var labelEl = document.querySelector('.plan-label');
-		var priceEl = document.querySelector('.plan-price');
-		var periodEl = document.querySelector('.plan-period');
-		var noteEl = document.querySelector('.plan-note');
+    <!-- about-section -->
+    <section class="relative bg-body-bg lg:pt-6 lg:pb-50 pb-20 text-center">
+        <div class="container">
+            <!-- 1. Top Section: Title & Tags -->
+            <div class="md:mb-15">
+                <h2 class="mx-auto max-w-4xl text-center md:text-5xl text-3xl font-medium leading-tight tracking-tight text-black mb-10">
+                    Sell on Woo without manual Whop plan IDs —
+                    <br class="hidden md:block" />
+                    dynamic checkout from any cart, any product, any total.
+                </h2>
 
-		if (labelEl && plan.label) labelEl.textContent = 'Whop Checkout';
-		if (priceEl && plan.price) priceEl.textContent = plan.price;
-		if (periodEl && plan.period) periodEl.textContent = plan.period;
-		if (noteEl && plan.note) noteEl.textContent = plan.note;
-		if (checkoutBtn && plan.checkoutUrl) {
-			checkoutBtn.href = plan.checkoutUrl;
-			checkoutBtn.setAttribute('rel', 'noopener');
-			if (plan.price) {
-				checkoutBtn.textContent = 'Get Lifetime for ' + plan.price;
-			}
-		}
+                <p class="lg:text-2xl md:text-xl text-base text-default-700 font-medium mb-3.5">
+                    Built for stores that outgrew plan-id embeds.
+                </p>
 
-		document.querySelectorAll('.js-support').forEach(function (el) {
-			el.href = 'mailto:' + email;
-			el.textContent = email;
-		});
+                <!-- Tags -->
+                <div class="flex flex-wrap justify-center gap-3.5">
+                    <span class="px-3.5 py-2 bg-default-200 rounded-full text-sm font-semibold text-default-800">#DigitalSellers</span>
+                    <span class="px-3.5 py-2 bg-default-200 rounded-full text-sm font-semibold text-default-800">#PhysicalStores</span>
+                    <span class="px-3.5 py-2 bg-default-200 rounded-full text-sm font-semibold text-default-800">#HighRisk</span>
+                    <span class="px-3.5 py-2 bg-default-200 rounded-full text-sm font-semibold text-default-800">#WhopSellers</span>
+                </div>
+            </div>
 
-		if (cfg.videoEmbedUrl) {
-			var wrap = document.getElementById('video-wrap');
-			var placeholder = document.getElementById('video-placeholder');
-			if (wrap && placeholder) {
-				placeholder.remove();
-				var iframe = document.createElement('iframe');
-				iframe.src = cfg.videoEmbedUrl;
-				iframe.title = 'Whop Checkout demo video';
-				iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-				iframe.allowFullscreen = true;
-				wrap.appendChild(iframe);
-			}
-		}
+            <!-- Main visual: phone + feature chips (no overlapping marquee) -->
+            <div class="relative w-full md:py-16 py-10 flex flex-col items-center">
+                <div class="about-visual relative z-10 flex items-center justify-center gap-4 md:gap-8 w-full max-w-5xl">
+                    <!-- Left chips -->
+                    <div class="hidden md:flex flex-col gap-4 shrink-0">
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-[#ff6423]"><i class="iconify tabler--shopping-cart size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">No plan IDs</span>
+                        </div>
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl ms-6">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-primary-6"><i class="iconify tabler--credit-card size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">Cart totals</span>
+                        </div>
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-primary-3"><i class="iconify tabler--webhook size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">Webhooks</span>
+                        </div>
+                    </div>
 
-		document.getElementById('year').textContent = new Date().getFullYear();
+                    <!-- Phone -->
+                    <div class="wc-phone relative">
+                        <div class="flex items-center justify-between px-5 pt-3.5 pb-2 shrink-0">
+                            <span class="text-[10px] text-white/70 font-medium">9:41</span>
+                            <div class="w-20 h-5 rounded-full bg-black"></div>
+                            <div class="flex items-center gap-1 opacity-70">
+                                <span class="size-1.5 rounded-full bg-white"></span>
+                                <span class="size-1.5 rounded-full bg-white"></span>
+                                <span class="w-4 h-2 rounded-sm border border-white"></span>
+                            </div>
+                        </div>
+                        <div class="px-4 pb-3 shrink-0">
+                            <div class="flex items-center gap-2.5">
+                                <div class="md:size-10 size-8 rounded-xl bg-[#ff6423] text-white md:text-sm text-xs font-bold flex items-center justify-center">W</div>
+                                <div>
+                                    <p class="md:text-sm text-xs font-semibold text-white leading-none">WhopCheckout</p>
+                                    <p class="md:text-[11px] text-[9px] text-white/45 mt-1">WooCommerce · Live</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 min-h-0 overflow-hidden px-3.5 pb-4 space-y-2.5">
+                            <div class="rounded-2xl bg-white/10 border border-white/10 p-3">
+                                <p class="text-[9px] md:text-[11px] uppercase tracking-wider text-white/40 mb-1">Today</p>
+                                <p class="md:text-3xl text-xl font-semibold text-white tracking-tight">$2,480</p>
+                                <p class="md:text-xs text-[10px] text-green-400 mt-1">↑ 18 orders via Whop</p>
+                            </div>
+                            <div class="rounded-2xl bg-[#16161a] border border-white/10 p-3">
+                                <p class="text-[9px] md:text-[11px] font-semibold text-white/50 mb-2">Live cart session</p>
+                                <div class="space-y-1.5 text-[10px] md:text-xs">
+                                    <div class="flex justify-between text-white/60"><span>Course access</span><span class="text-white">$97</span></div>
+                                    <div class="flex justify-between text-white/60"><span>Coaching add-on</span><span class="text-white">$49</span></div>
+                                    <div class="flex justify-between text-white/60"><span>Coupon</span><span class="text-green-400">−$10</span></div>
+                                    <div class="flex justify-between pt-2 border-t border-white/10 text-xs md:text-sm font-semibold text-white"><span>Whop total</span><span>$136.00</span></div>
+                                </div>
+                                <div class="mt-3 rounded-full bg-[#ff6423] text-white text-center text-[10px] md:text-xs font-semibold py-2.5">Pay with Whop</div>
+                            </div>
+                            <div class="rounded-2xl bg-white/10 border border-white/10 p-3 space-y-2">
+                                <p class="text-[9px] md:text-[11px] font-semibold text-white">Plugin health</p>
+                                <div class="flex justify-between text-[10px] md:text-xs"><span class="text-white/55">Webhook</span><span class="text-green-400 font-medium">Connected</span></div>
+                                <div class="flex justify-between text-[10px] md:text-xs"><span class="text-white/55">Sandbox</span><span class="text-white/80 font-medium">Ready</span></div>
+                                <div class="flex justify-between text-[10px] md:text-xs"><span class="text-white/55">Last order</span><span class="text-white/80 font-medium">Paid · #1842</span></div>
+                            </div>
+                            <div class="rounded-2xl bg-[#16161a] border border-white/10 p-3 space-y-2 hidden md:block">
+                                <p class="text-[11px] font-semibold text-white/50">Recent checkouts</p>
+                                <div class="flex justify-between text-xs"><span class="text-white/70">Marcus · Course</span><span class="text-green-400">$97</span></div>
+                                <div class="flex justify-between text-xs"><span class="text-white/70">Priya · Bundle</span><span class="text-green-400">$246</span></div>
+                                <div class="flex justify-between text-xs"><span class="text-white/70">James · Coaching</span><span class="text-green-400">$149</span></div>
+                            </div>
+                        </div>
+                    </div>
 
-		var header = document.querySelector('.site-header');
-		if (header) {
-			window.addEventListener('scroll', function () {
-				header.classList.toggle('is-scrolled', window.scrollY > 40);
-			}, { passive: true });
-		}
+                    <!-- Right chips -->
+                    <div class="hidden md:flex flex-col gap-4 shrink-0">
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-primary-2"><i class="iconify tabler--clock size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">5-min setup</span>
+                        </div>
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl me-6">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-primary-7"><i class="iconify tabler--flask size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">Sandbox mode</span>
+                        </div>
+                        <div class="inline-flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl">
+                            <div class="flex size-11 items-center justify-center rounded-full bg-primary-4"><i class="iconify tabler--shield-check size-5 text-white"></i></div>
+                            <span class="text-sm font-semibold text-default-800">Live orders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		if (!reducedMotion && 'IntersectionObserver' in window) {
-			var revealObserver = new IntersectionObserver(function (entries) {
-				entries.forEach(function (entry) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible');
-						revealObserver.unobserve(entry.target);
-					}
-				});
-			}, { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+            <!-- 3. Bottom Section: Description & Buttons -->
+            <div class="mx-auto px-6 md:mt-12 mt-4 flex flex-col gap-y-5 items-center">
+                <!-- Rating Badge -->
+                <div class="flex items-center gap-2 border border-default-200 bg-white md:px-5 px-2.5 py-2 rounded-full">
+                    <i class="iconify tabler--star-filled size-3.5 text-primary-1"></i>
+                    <p class="text-sm text-default-700 font-medium">
+                        <span class="text-black font-medium">One-time purchase</span>
+                        · Lifetime · Unlimited stores
+                    </p>
+                </div>
 
-			document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
-				revealObserver.observe(el);
-			});
-		} else {
-			document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
-				el.classList.add('is-visible');
-			});
-		}
+                <p class="text-default-700 md:text-lg text-base leading-normal mb-2.5 md:w-xl w-xs">
+                    Dynamic Whop sessions from any WooCommerce cart. Webhook-verified orders, sandbox testing, and a setup wizard that gets you live same day.
+                </p>
 
-		document.querySelectorAll('[data-marquee]').forEach(function (track) {
-			var speed = track.getAttribute('data-speed') || '78';
-			track.style.setProperty('--marquee-duration', speed + 's');
-			track.innerHTML = track.innerHTML + track.innerHTML;
-		});
-	})();
-	</script>
+                <!-- Buttons with Sliding Effect -->
+                <div class="flex flex-col md:flex-row gap-5 w-full justify-center">
+                    <a href="#pricing" class="plan-checkout group relative px-8.5 overflow-hidden rounded-full bg-black shadow-xl! text-white inline-flex items-center justify-center hover:scale-95 transition-all duration-300">
+                        <div class="relative flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                            <div class="flex items-center gap-3 h-14">
+                                <span class="font-normal">Buy now · $170</span>
+                            </div>
+                            <div class="flex items-center gap-3 h-14 absolute top-full">
+                                <span class="font-normal">Buy now · $170</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Demo CTA -->
+                    <a href="#demo-modal" data-open-demo class="group relative px-8.5 overflow-hidden rounded-full bg-default-200 text-black inline-flex items-center justify-center hover:scale-95 transition-all duration-300">
+                        <div class="relative flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                            <div class="flex items-center gap-2.5 h-14">
+                                <i class="iconify tabler--player-play-filled w-5 h-5"></i>
+                                <span class="font-normal">Watch Demo</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 h-14 absolute top-full">
+                                <i class="iconify tabler--player-play-filled w-5 h-5"></i>
+                                <span class="font-normal">Watch Demo</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative lg:block hidden">
+            <img src="theme/images/locations/cloud-04.webp" loading="lazy" alt="Decoration Image" class="absolute inset-s-0 inset-e-0 w-full object-cover -bottom-100 h-148 -z-5" />
+            <img src="theme/images/locations/cloud-02.webp" loading="lazy" alt="Decoration Image" class="absolute inset-e-0 -bottom-38 h-75 -z-5" />
+            <img src="theme/images/locations/cloud-01.webp" loading="lazy" alt="Decoration Image" class="absolute inset-s-0 -bottom-48 h-75 -z-5" />
+        </div>
+    </section>
+
+    <!-- feature-section -->
+    <section id="features" class="relative bg-body-bg lg:pb-50 md:pb-25 pb-8">
+        <div class="container">
+            <!-- Feature Title Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-8 gap-3.5 items-center mb-12.5">
+                <div>
+                    <div class="inline-flex mb-3.5">
+                        <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full">Why WhopCheckout</span>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight lg:w-lg">
+                        Checkout that scales with your catalog.
+                    </h2>
+                </div>
+
+                <div>
+                    <p class="text-default-600 text-lg leading-normal float-end lg:w-md">
+                        WhopCheckout connects Whop to WooCommerce with dynamic sessions, webhook verification, and a 5-minute setup wizard.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-7.5">
+                <div class="rounded-3xl bg-default-200 overflow-hidden">
+                    <div class="lg:px-10 lg:pb-12.5 lg:pt-10 md:px-5 md:py-5 px-3.5 py-3.5">
+                        <h3 class="md:text-2xl text-xl font-semibold text-default-800 mb-2.5">
+                            High-Risk Processing
+                        </h3>
+
+                        <p class="max-w-md text-lg text-default-600">
+                            Merchant-friendly Whop processing when Stripe or PayPal won't work for your vertical.
+                        </p>
+                    </div>
+
+                    <div class="relative mb-7.5 mx-5 rounded-2xl bg-white border border-default-200 p-5 shadow-sm">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-default-400 mb-3">Whop payout status</p>
+                        <div class="flex items-center justify-between py-2 border-b border-default-100"><span class="text-sm text-default-700">CBD store · live</span><span class="text-sm font-semibold text-green-600">Active</span></div>
+                        <div class="flex items-center justify-between py-2 border-b border-default-100"><span class="text-sm text-default-700">Supplements · live</span><span class="text-sm font-semibold text-green-600">Active</span></div>
+                        <div class="flex items-center justify-between py-2"><span class="text-sm text-default-700">Processor holds</span><span class="text-sm font-semibold text-default-900">None</span></div>
+                    </div>
+
+                    <!-- Marquee -->
+                    <div class="relative overflow-hidden">
+                        <div class="flex w-max animate-marquee gap-5 lg:pb-20 pb-5">
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-1">
+                                    <img src="theme/images/icons/icon-42.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">High-risk OK</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-6">
+                                    <img src="theme/images/icons/icon-43.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">No plan IDs</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-8">
+                                    <img src="theme/images/icons/icon-44.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">Cart sync</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-2">
+                                    <img src="theme/images/icons/icon-12.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">Cart item</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-3">
+                                    <img src="theme/images/icons/icon-13.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">Webhooks</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-4">
+                                    <img src="theme/images/icons/icon-16.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">Sandbox</span>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="flex items-center gap-3 rounded-full py-2.5 ps-2.5 pe-5 bg-white backdrop-blur-sm">
+                                <div class="flex size-8 items-center justify-center rounded-full bg-primary-7">
+                                    <img src="theme/images/icons/icon-17.svg" alt="" class="size-3.25" />
+                                </div>
+
+                                <span class="whitespace-nowrap text-sm font-medium text-default-800">Webhooks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl bg-[url('theme/images/locations/feature-01.webp')] lg:p-10 md:p-5 p-3.5 flex flex-col lg:gap-y-12.5 gap-y-5">
+                    <!-- Top Content -->
+                    <div>
+                        <h3 class="md:text-2xl text-xl mb-2.5 font-semibold text-white">
+                            Auto Cart Total
+                        </h3>
+
+                        <p class="lg:w-md text-lg text-gray-400">
+                            Reads your WooCommerce order total and creates the matching Whop checkout session every time.
+                        </p>
+                    </div>
+
+                    <!-- Checkout session card -->
+                    <div class="bg-black/70 backdrop-blur-xl border border-white/20 rounded-3xl text-white w-full lg:max-w-xl p-5">
+                        <div class="flex items-center gap-3 mb-5 pb-4 border-b border-white/15">
+                            <div class="size-9 rounded-lg bg-[#ff6423] flex items-center justify-center text-sm font-bold">W</div>
+                            <div>
+                                <p class="text-sm font-semibold">Whop checkout session</p>
+                                <p class="text-xs text-white/50">Generated from Woo cart</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between"><span class="text-white/60">Course access</span><span>$97.00</span></div>
+                            <div class="flex justify-between"><span class="text-white/60">Coaching add-on</span><span>$49.00</span></div>
+                            <div class="flex justify-between"><span class="text-white/60">Coupon</span><span class="text-green-400">−$10.00</span></div>
+                            <div class="flex justify-between pt-3 border-t border-white/15 text-base font-semibold"><span>Order total</span><span>$136.00</span></div>
+                        </div>
+                        <div class="mt-5 rounded-full bg-white text-black text-center text-sm font-semibold py-3">Pay with Whop</div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div class="relative overflow-hidden rounded-2xl bg-black lg:p-10 md:p-5 p-3.5 bg-[url('theme/images/locations/feature-02.webp')]">
+                        <!-- Background Overlay -->
+                        <div class="absolute inset-0 bg-black/40"></div>
+
+                        <div class="relative z-10 grid grid-cols-1 items-center md:gap-10 gap-6 md:grid-cols-2">
+                            <!-- Left Content -->
+                            <div class="flex h-full flex-col justify-between">
+                                <!-- Top -->
+                                <div class="lg:max-w-md">
+                                    <h3 class="md:text-2xl text-xl font-semibold leading-tight text-white mb-2.5">
+                                        Unlimited Products
+                                    </h3>
+
+                                    <p class="md:text-lg text-base leading-relaxed text-default-400 md:mb-7.5 mb-5">
+                                        Sell digital or physical with no individual Whop checkout config per product or variant.
+                                    </p>
+
+                                    <!-- Button -->
+                                    <a href="#pricing" class="plan-checkout group inline-flex relative overflow-hidden rounded-full bg-white md:px-8.5 px-3.5 py-3 md:py-3 md:text-lg text-sm font-medium text-black transition-all duration-300 hover:scale-95">
+                                        <span class="relative block overflow-hidden">
+                                            <span class="block transition-transform duration-300 group-hover:-translate-y-full">Get
+                                                the plugin now</span>
+
+                                            <span class="absolute left-0 top-full block transition-transform duration-300 group-hover:-translate-y-full">Get
+                                                the plugin now</span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <!-- Bottom Text -->
+                                <p class="md:mt-14 mt-5 text-sm text-default-500">
+                                    *One plugin. Unlimited products. No plan-id spreadsheet.
+                                </p>
+                            </div>
+
+                            <!-- Right Images -->
+                            <div class="relative flex items-end justify-center lg:justify-end">
+                                <div class="mx-auto my-8 w-56 rounded-2xl bg-black/80 border border-white/20 p-4 text-left text-white"><p class="text-xs text-white/50 mb-2">Setup wizard</p><p class="text-sm font-medium mb-1">1. Paste Whop API keys</p><p class="text-sm font-medium mb-1">2. Register webhook</p><p class="text-sm font-medium">3. Run sandbox order</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-3xl bg-[url('theme/images/locations/feature-03.webp')] lg:p-10 md:p-5 p-3.5">
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80"></div>
+
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <!-- Top Content -->
+                        <div class="max-w-2xl md:mb-12.5 mb-6">
+                            <h3 class="md:text-2xl text-xl font-semibold leading-tight text-white mb-2.5">
+                                5-Minute Setup
+                            </h3>
+
+                            <p class="md:text-lg text-base leading-relaxed text-default-300 md:w-sm">
+                                Install, run the wizard, paste API keys, register webhook, and go live the same day.
+                            </p>
+                        </div>
+
+                        <!-- Center Card -->
+                        <div class="mx-auto max-w-5xl rounded-3xl bg-black/85 p-7.5 backdrop-blur-xl">
+                            <h4 class="text-center md:text-lg text-base font-semibold text-white">
+                                Setup checklist
+                            </h4>
+
+                            <!-- Progress Items -->
+                            <div class="mt-7.5 grid grid-cols-2 gap-7.5 text-center md:grid-cols-3">
+                                <!-- Item -->
+                                <div class="flex flex-col items-center">
+                                    <div class="relative flex items-center justify-center">
+                                        <img src="theme/images/icons/icon-46.svg" alt="Install" class="size-20" />
+
+                                        <div class="absolute flex items-center text-white">
+                                            <span class="text-xl font-medium">86</span>
+                                            <span class="mb-1 text-lg font-medium">%</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-3.5 md:text-lg text-base text-default-300">
+                                        Install
+                                    </p>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="flex flex-col items-center">
+                                    <div class="relative flex items-center justify-center">
+                                        <img src="theme/images/icons/icon-47.svg" alt="API keys" class="md:size-30 size-20" />
+
+                                        <div class="absolute flex items-center text-white">
+                                            <span class="text-xl font-medium">100</span>
+                                            <span class="mb-1 text-xl font-medium">%</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-3.5 md:text-lg text-base text-default-300">
+                                        API keys
+                                    </p>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="flex flex-col items-center">
+                                    <div class="relative flex items-center justify-center">
+                                        <img src="theme/images/icons/icon-48.svg" alt="Webhook" class="size-20" />
+
+                                        <div class="absolute flex items-center text-white">
+                                            <span class="text-xl font-medium">71</span>
+                                            <span class="mb-1 text-lg font-medium">%</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-3.5 md:text-lg text-base text-default-300">
+                                        Webhook
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Stats -->
+                        <div class="mt-7.5 md:gap-7.5 gap-2 grid grid-cols-2">
+                            <!-- Card -->
+                            <div class="rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-xl">
+                                <div class="md:flex items-start md:justify-between gap-6">
+                                    <div>
+                                        <p class="text-lg leading-snug text-white">
+                                            Orders
+                                            <br />
+                                            Completed
+                                        </p>
+                                    </div>
+
+                                    <h3 class="lg:text-4xl md:text-3xl text-2xl font-semibold text-white">
+                                        12
+                                    </h3>
+                                </div>
+
+                                <p class="md:mt-7.5 mt-4 text-lg text-default-400">
+                                    Webhook signed
+                                </p>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-xl">
+                                <div class="md:flex items-start md:justify-between gap-6">
+                                    <div>
+                                        <p class="text-lg leading-snug text-white">
+                                            test orders
+                                        </p>
+                                    </div>
+
+                                    <h3 class="lg:text-4xl md:text-3xl text-2xl font-semibold text-white">
+                                        7
+                                    </h3>
+                                </div>
+
+                                <p class="md:mt-7.5 mt-4 text-lg text-default-400">
+                                    Go live today
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-3xl bg-default-900 lg:p-10 p-5 min-h-100 md:min-h-125">
+                    <!-- Background Glow -->
+                    <div class="absolute left-1/2 top-1/2 size-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl">
+                    </div>
+
+                    <!-- Person: larger, no BG, anchored to card bottom -->
+                    <img src="theme/images/sandbox-person.png?v=3" alt="" class="sandbox-person" />
+
+                    <!-- Content -->
+                    <div class="relative z-20 flex flex-col h-full min-h-90 md:min-h-110">
+                        <!-- Top -->
+                        <div class="relative z-20 max-w-xs md:max-w-sm">
+                            <h3 class="md:text-2xl text-xl font-semibold leading-tight text-white mb-2.5">
+                                Sandbox Mode
+                            </h3>
+
+                            <p class="text-lg leading-relaxed text-default-300">
+                                Test end-to-end before taking real payments. Health dashboard shows webhook status.
+                            </p>
+                        </div>
+
+                        <!-- Sandbox health card (he points toward this) -->
+                        <div class="mt-auto mb-8 md:mb-12 w-56 md:w-64 rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 p-4 text-white text-left shadow-xl">
+                            <p class="text-sm font-semibold mb-3">Sandbox health</p>
+                            <div class="flex items-center justify-between text-xs py-2 border-b border-white/10"><span class="text-white/70">Webhook</span><span class="text-green-400 font-medium">Connected</span></div>
+                            <div class="flex items-center justify-between text-xs py-2 border-b border-white/10"><span class="text-white/70">Last test order</span><span class="text-green-400 font-medium">Paid</span></div>
+                            <div class="flex items-center justify-between text-xs py-2"><span class="text-white/70">Mode</span><span class="font-medium">Sandbox</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tabs-section -->
+    <section class="relative bg-body-bg" id="how">
+        <!-- Dot Grid Pattern Overlay -->
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-60" style="
+          background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+          background-size: 24px 24px;
+        "></div>
+
+        <div class="container bg-white bg-[url('theme/images/icons/vector-10.png')] object-cover relative z-10 text-center lg:p-25 p-8.5 lg:mx-auto rounded-2xl">
+            <!-- Top Badge -->
+            <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full mb-3.5">Fits
+                every Woo catalog</span>
+
+            <!-- Heading -->
+            <h2 class="md:mb-12.5 mb-8 text-2xl md:text-4xl lg:text-5xl font-medium tracking-normal text-default-900 leading-[1.1]">
+                Built for the stores
+                <br class="hidden md:block" />
+                that need Whop
+            </h2>
+
+            <!-- Preline Tabs Navigation -->
+            <nav class="flex flex-wrap justify-center md:gap-5 gap-2.5 mb-7.5" aria-label="Tabs" role="tablist">
+                <!-- Tab 1: Digital Sellers -->
+                <button type="button" class="hs-tab-active:border-default-800 hs-tab-active:bg-default-100 hs-tab-active:text-default-900 py-2.5 px-5 inline-flex items-center gap-x-2.5 bg-default-100 border border-default-200 md:text-lg text-base font-medium text-default-500 rounded-xl hover:bg-default-100 transition-all active" id="tabs-item-1" data-hs-tab="#tabs-1" aria-controls="tabs-1" role="tab">
+                    <i class="iconify lucide--briefcase-business"></i>
+                    Digital Sellers
+                </button>
+
+                <!-- Tab 2: Physical Stores -->
+                <button type="button" class="hs-tab-active:border-default-800 hs-tab-active:bg-default-100 hs-tab-active:text-default-900 py-2.5 px-5 inline-flex items-center gap-x-2.5 bg-default-100 border border-default-200 md:text-lg text-base font-medium text-default-500 rounded-xl hover:bg-default-100 transition-all" id="tabs-item-2" data-hs-tab="#tabs-2" aria-controls="tabs-2" role="tab">
+                    <i class="iconify lucide--graduation-cap"></i>
+                    Physical Stores
+                </button>
+
+                <!-- Tab 3: High-Risk Niches -->
+                <button type="button" class="hs-tab-active:border-default-800 hs-tab-active:bg-default-100 hs-tab-active:text-default-900 py-2.5 px-5 inline-flex items-center gap-x-2.5 bg-default-100 border border-default-200 md:text-lg text-base font-medium text-default-500 rounded-xl hover:bg-default-100 transition-all" id="tabs-item-3" data-hs-tab="#tabs-3" aria-controls="tabs-3" role="tab">
+                    <i class="iconify lucide--briefcase-business"></i>
+                    High-Risk Niches
+                </button>
+
+                <!-- Tab 4: Whop Sellers -->
+                <button type="button" class="hs-tab-active:border-default-800 hs-tab-active:bg-default-100 hs-tab-active:text-default-900 py-2.5 px-5 inline-flex items-center gap-x-2.5 bg-default-100 border border-default-200 md:text-lg text-base font-medium text-default-500 rounded-xl hover:bg-default-100 transition-all" id="tabs-item-4" data-hs-tab="#tabs-4" aria-controls="tabs-4" role="tab">
+                    <i class="iconify lucide--users"></i>
+                    Whop Sellers
+                </button>
+            </nav>
+
+            <!-- Tab Content Panes -->
+            <div class="mt-8 relative max-w-5xl mx-auto">
+                <!-- Tab 1: Digital Sellers -->
+                <div id="tabs-1" role="tabpanel" aria-labelledby="tabs-item-1" class="transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl shadow-default-200/50">
+                        <img src="theme/images/gallery/step-image-01.webp" class="w-full lg:h-138 h-92 object-cover" alt="Digital Sellers" />
+                        <!-- Glassmorphism Card Overlay -->
+                        <div class="absolute lg:bottom-8 md:bottom-4 bottom-2 right-2 lg:right-8 md:right-4 bg-default-900/60 backdrop-blur-md lg:p-7.5 md:p-5 p-3.5 rounded-3xl border border-white/10 md:w-100 w-70 text-left">
+                            <p class="text-default-300 md:text-lg text-sm mb-7.5 tracking-normal font-medium">
+                                Courses, Discord access, templates — any cart mix, one dynamic session.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <h3 class="md:text-4xl text-2xl font-bold text-white leading-none">
+                                    14
+                                </h3>
+                                <p class="text-default-400 text-sm font-medium tracking-tighter">
+                                    Products, one checkout flow
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Physical Stores -->
+                <div id="tabs-2" class="hidden" role="tabpanel" aria-labelledby="tabs-item-2">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl shadow-default-200/50">
+                        <img src="theme/images/gallery/step-image-02.webp" class="w-full lg:h-138 h-92 object-cover" alt="Physical Stores" />
+                        <div class="absolute lg:bottom-8 md:bottom-4 bottom-2 right-2 lg:right-8 md:right-4 bg-default-900/60 backdrop-blur-md lg:p-7.5 md:p-5 p-3.5 rounded-3xl border border-white/10 md:w-100 w-70 text-left">
+                            <p class="text-default-300 md:text-lg text-sm mb-7.5 tracking-normal font-medium">
+                                Variants, shipping, coupons — Whop gets the exact Woo total every time.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <h3 class="md:text-4xl text-2xl font-bold text-white leading-none">
+                                    12
+                                </h3>
+                                <p class="text-default-400 text-sm font-medium tracking-tighter">
+                                    Variants, one session
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: High-Risk Niches -->
+                <div id="tabs-3" class="hidden" role="tabpanel" aria-labelledby="tabs-item-3">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl shadow-default-200/50">
+                        <img src="theme/images/gallery/step-image-03.webp" class="w-full lg:h-138 h-92 object-coverr" alt="High-Risk Niches" />
+                        <div class="absolute lg:bottom-8 md:bottom-4 bottom-2 right-2 lg:right-8 md:right-4 bg-default-900/60 backdrop-blur-md lg:p-7.5 md:p-5 p-3.5 rounded-3xl border border-white/10 md:w-100 w-70 text-left">
+                            <p class="text-default-300 md:text-lg text-sm mb-7.5 tracking-normal font-medium">
+                                When mainstream gateways freeze accounts, Whop stays open for business.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <h3 class="md:text-4xl text-2xl font-bold text-white leading-none">
+                                    40
+                                </h3>
+                                <p class="text-default-400 text-sm font-medium tracking-tighter">
+                                    Verticals going live
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Whop Sellers -->
+                <div id="tabs-4" class="hidden" role="tabpanel" aria-labelledby="tabs-item-4">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl shadow-default-200/50">
+                        <img src="theme/images/gallery/step-image-04.webp" class="w-full lg:h-138 h-92 object-cover" alt="Digital Sellers" />
+                        <!-- Glassmorphism Card Overlay -->
+                        <div class="absolute lg:bottom-8 md:bottom-4 bottom-2 right-2 lg:right-8 md:right-4 bg-default-900/60 backdrop-blur-md lg:p-7.5 md:p-5 p-3.5 rounded-3xl border border-white/10 md:w-100 w-70 text-left">
+                            <p class="text-default-300 md:text-lg text-sm mb-7.5 tracking-normal font-medium">
+                                Already on Whop? Add WooCommerce without rebuilding every plan ID.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <h3 class="md:text-4xl text-2xl font-bold text-white leading-none">
+                                    87%
+                                </h3>
+                                <p class="text-default-400 text-sm font-medium tracking-tighter">
+                                    Stores on one license
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Rhythm Badges -->
+            <div class="md:mt-12.5 mt-6">
+                <p class="text-default-800 text-sm mb-2.5 font-medium">
+                    And for every kind of Woo catalog
+                </p>
+                <div class="flex flex-wrap justify-center md:gap-6.5 gap-2.5">
+                    <span class="text-sm font-medium transition-colors text-default-900">#whop sellers</span>
+                    <span class="text-sm font-medium transition-colors text-default-900">#creatives</span>
+                    <span class="text-sm font-medium transition-colors text-default-900">#entrepreneurs</span>
+                    <span class="text-sm font-medium transition-colors text-default-900">#freelancers</span>
+                    <span class="text-sm font-medium transition-colors text-default-900">#woocommerce</span>
+                    <span class="text-sm font-medium transition-colors text-default-900">#whop checkout</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- stats-section -->
+    <section class="relative bg-body-bg lg:pb-46 md:pb-25 pb-20 overflow-hidden">
+        <div class="container">
+            <!-- Top Titles (Optional from code) -->
+            <div class="text-center mb-2">
+                <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full mb-3.5">Real
+                    checkout, real results</span>
+                <h2 class="lg:text-5xl md:text-4xl text-3xl font-medium text-default-900">
+                    Why stores switch
+                    <br />
+                    to WhopCheckout
+                </h2>
+            </div>
+
+            <!-- Main Hero Counter -->
+            <div class="relative flex flex-col items-center justify-center mb-7.5 z-20">
+                <div class="relative md:inline-flex items-center">
+                    <h3 class="lg:text-[120px] md:text-[100px] text-4xl font-black leading-none tracking-normal text-primary-1 md:ms-0 ms-8">
+                        $170
+                        <span class="ms-1"></span>
+                    </h3>
+
+                    <!-- Floating Slanted Badge -->
+                    <div class="md:absolute md:top-20 -inset-e-12 md:-right-20 md:rotate-8 bg-white py-2 md:px-5 px-2 rounded-2xl shadow-xl whitespace-nowrap mt-1">
+                        <p class="md:text-sm text-xs font-bold text-default-800">
+                            One-time · Lifetime · Unlimited stores
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-start items-center md:h-138 h-100 mx-auto relative">
+                <img src="theme/images/workspace/glob-image.png" class="w-full object-cover hidden" />
+
+                <div class="bg-body-bg w-full h-full overflow-hidden">
+                    <div class="z-20 mix-blinset-e-darken lg:h-200 md:h-125 h-75 bg-body-bg relative overflow-hidden">
+                        <video autoplay loop muted playsinline class="absolute -inset-300 z-[-100] size-full object-cover bg-center bg-cover m-auto bg-[url('theme/images/workspace/hero-glob.jpg')]">
+                            <source src="theme/videos/hero-glob.mp4" />
+                        </video>
+                    </div>
+                    <img src="theme/images/locations/cloud-06.webp" alt="Decoration" class="absolute md:h-62.5 h-40 top-auto -inset-s-20 lg:bottom-2 md:bottom-30 bottom-40 inset-e-0 z-20 w-full" />
+                    <img src="theme/images/locations/cloud-01.webp" alt="Decoration Image" class="absolute md:h-112 lg:-bottom-50 md:-bottom-25 bottom-20 -inset-s-7.5 inset-e-0 top-auto z-20 w-full" />
+                    <img src="theme/images/locations/cloud-01.webp" alt="Decoration Image" class="absolute lg:h-112 h-75 lg:-bottom-25 md:-bottom-5 bottom-3 lg:-inset-e-62.5 -inset-e-25 top-auto inset-s-auto z-20 w-full" />
+                </div>
+
+                <div class="grid md:grid-cols-3 grid-cols-2 gap-6 lg:gap-17.5 items-start text-center md:w-3xl mx-auto z-40 lg:-mt-0 md:-mt-60 -mt-50">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-baseline gap-1">
+                            <h3 class="text-3xl md:text-5xl lg:text-7xl font-medium text-default-900 tracking-normal">
+                                100
+                            </h3>
+                            <span class="text-3xl md:text-5xl lg:text-6xl font-medium text-primary-6">%</span>
+                        </div>
+                        <p class="mt-2 text-default-800 font-semibold md:text-lg text-sm leading-tight">
+                            Webhook verified
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-3xl md:text-5xl lg:text-7xl font-medium text-default-900 tracking-normal">
+                            ∞
+                        </h3>
+                        <p class="mt-2 text-default-800 font-semibold md:text-lg text-sm leading-tight">
+                            Unlimited products
+                        </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-col items-center md:col-span-1 col-span-2">
+                        <div class="flex items-baseline gap-1">
+                            <h3 class="text-3xl md:text-5xl lg:text-7xl font-medium text-default-900 tracking-normal">
+                                ∞
+                            </h3>
+                        </div>
+                        <p class="mt-2 text-default-800 font-semibold md:text-lg text-sm leading-tight">
+                            Unlimited stores
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Stats Grid -->
+        </div>
+    </section>
+
+    <!-- smart-assist-section -->
+    <section class="bg-body-bg lg:pb-50 pb-25" id="smart-assist">
+        <div class="container">
+            <!-- Top Grid: Content & Mockup -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7.5 items-center mb-20">
+                <!-- Left Content -->
+                <div>
+                    <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full mb-2.5">Smarter
+                        checkout, less config</span>
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-medium text-default-900 tracking-tight leading-tight mb-2.5">
+                        Dynamic sessions that
+                        <br class="hidden md:block" />
+                        match the cart
+                    </h3>
+                    <p class="text-default-500 md:text-lg text-base md:leading-relaxed leading-normal max-w-lg mb-6">
+                        WhopCheckout reads the WooCommerce total — coupons, shipping, variants — and opens the right Whop checkout every time.
+                    </p>
+                    <div>
+                        <a href="#pricing" class="plan-checkout group relative px-8.5 overflow-hidden rounded-full bg-black shadow-xl! text-white inline-flex items-center justify-center hover:scale-95 transition-all duration-300">
+                            <div class="relative inline-flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                                <div class="flex items-center gap-3 h-14">
+                                    <span class="font-medium">See how checkout works</span>
+                                </div>
+                                <div class="flex items-center gap-3 h-14 absolute top-full">
+                                    <span class="font-medium">See how checkout works</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual (Mockup) -->
+                <div class="relative w-full lg:max-w-4xl mx-auto lg:aspect-[4/3] md:aspect-video flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl group bg-[url('theme/images/workspace/suggestion-image.webp')] lg:h-142 h-100">
+                    <!-- Main Phone Mockup -->
+                    <div class="absolute -right-16 top-10 md:top-20 transition-transform duration-700 ease-out">
+                        <div class="lg:w-xs w-48 h-80 rounded-3xl bg-default-900 text-white p-5 flex flex-col justify-between shadow-xl"><div><p class="text-xs text-white/50">Whop session</p><p class="text-2xl font-semibold mt-2">$146.00</p></div><div class="rounded-full bg-white text-black text-center text-sm font-semibold py-3">Pay with Whop</div></div>
+                    </div>
+
+                    <!-- Floating Suggestion Cards -->
+                    <div class="absolute left-6 md:left-12 top-12 md:top-20 lg:flex flex-col gap-4 z-30 hidden">
+                        <!-- Dark Card (Top) -->
+                        <div class="animate-float">
+                            
+                        </div>
+
+                        <!-- White Card (Middle) -->
+                        <div class="animate-float">
+                            
+                        </div>
+
+                        <!-- White Card (Bottom) -->
+                        <div class="animate-float">
+                            
+                        </div>
+                    </div>
+
+                    <!-- Robot Icon (Bottom) -->
+                    <div class="absolute bottom-20 left-40 z-30 animate-pulse-slow lg:block hidden">
+                        <div>
+                            <img src="theme/images/icons/icon-30.svg" alt="AI Icon" class="size-18 rounded-2xl shadow-inner" />
+                        </div>
+                    </div>
+
+                    <!-- Soft Vignette Overlay -->
+                    <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/5 to-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Grid: Features -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-7.5 gap-2.5 mt-24">
+                <!-- Cart Sync -->
+                <div class="lg:p-7.5 md:p-5 p-3.5 bg-white rounded-2xl group flex flex-col justify-end lg:gap-y-17.5 md:gap-y-10 gap-y-6.5">
+                    <div class="size-12.5 flex justify-center items-center rounded-full bg-primary-3">
+                        <i class="iconify lucide--bell-dot text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="md:text-2xl text-xl font-medium text-default-900 mb-2.5">
+                            Cart Sync
+                        </h4>
+                        <p class="text-default-700 md:text-lg text-sm leading-normal">
+                            Passes the exact discounted total to Whop.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- No Plan IDs -->
+                <div class="lg:p-7.5 md:p-5 p-3.5 bg-white rounded-2xl group flex flex-col justify-end lg:gap-y-17.5 md:gap-y-10 gap-y-6.5">
+                    <div class="size-12.5 flex justify-center items-center rounded-full bg-primary-7">
+                        <img src="theme/images/icons/icon-32.svg" alt="" />
+                    </div>
+                    <div>
+                        <h4 class="md:text-2xl text-xl font-medium text-default-900 mb-2.5">
+                            No Plan IDs
+                        </h4>
+                        <p class="text-default-700 md:text-lg text-sm leading-normal">
+                            One session for every product mix.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Webhook Proof -->
+                <div class="lg:p-7.5 md:p-5 p-3.5 bg-white rounded-2xl group flex flex-col justify-end lg:gap-y-17.5 md:gap-y-10 gap-y-6.5">
+                    <div class="size-12.5 flex justify-center items-center rounded-full bg-primary-6">
+                        <i class="iconify lucide--eye text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="md:text-2xl text-xl font-medium text-default-900 mb-2.5">
+                            Webhook Proof
+                        </h4>
+                        <p class="text-default-700 md:text-lg text-sm leading-normal">
+                            Signed webhooks mark Woo orders paid.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Recovery Suggestion -->
+                <div class="lg:p-7.5 md:p-5 p-3.5 bg-white rounded-2xl group flex flex-col justify-end lg:gap-y-17.5 md:gap-y-10 gap-y-6.5">
+                    <div class="size-12.5 flex justify-center items-center rounded-full bg-primary-2">
+                        <i class="iconify lucide--lightbulb text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="md:text-[21px] text-xl font-medium text-default-900 mb-2.5">
+                            Sandbox First
+                        </h4>
+                        <p class="text-default-700 md:text-lg text-sm leading-normal">
+                            Test orders before you go live.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials-section / seller videos -->
+    <section id="demo" class="relative bg-body-bg overflow-hidden text-default-900 pb-25 pt-10">
+        <div class="container">
+            <div class="mx-auto md:mb-12.5 mb-8 text-center">
+                <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full mb-2.5">Seller stories</span>
+                <h2 class="lg:text-5xl md:text-4xl text-2xl font-semibold tracking-normal mb-2.5 text-default-900">
+                    How sellers use WhopCheckout every day
+                </h2>
+                <p class="mt-3 text-default-600 md:text-lg">Real Woo stores running Whop without plan-id headaches.</p>
+            </div>
+
+            <div class="seller-videos">
+                
+                        <div class="relative overflow-hidden rounded-2xl shrink-0 w-56 md:w-64">
+                            <video autoplay muted loop playsinline class="h-80 w-full object-cover" poster="theme/images/event/story-slider-01_poster.jpg">
+                                <source src="theme/videos/story-slider-01.mp4" type="video/mp4" />
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30"></div>
+                            <div class="absolute left-4 top-4 z-20 flex items-center gap-2.5">
+                                <div class="size-9 rounded-full bg-[#ff6423] text-white text-xs font-bold flex items-center justify-center">MT</div>
+                                <div class="text-start">
+                                    <p class="text-sm font-semibold text-white leading-none">Marcus T.</p>
+                                    <p class="mt-1 text-xs text-white/70">Course creator</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl shrink-0 w-56 md:w-64">
+                            <video autoplay muted loop playsinline class="h-80 w-full object-cover" poster="theme/images/event/story-slider-02_poster.jpg">
+                                <source src="theme/videos/story-slider-02.mp4" type="video/mp4" />
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30"></div>
+                            <div class="absolute left-4 top-4 z-20 flex items-center gap-2.5">
+                                <div class="size-9 rounded-full bg-[#ff6423] text-white text-xs font-bold flex items-center justify-center">PM</div>
+                                <div class="text-start">
+                                    <p class="text-sm font-semibold text-white leading-none">Priya M.</p>
+                                    <p class="mt-1 text-xs text-white/70">Agency owner</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl shrink-0 w-56 md:w-64">
+                            <video autoplay muted loop playsinline class="h-80 w-full object-cover" poster="theme/images/event/story-slider-03_poster.jpg">
+                                <source src="theme/videos/story-slider-03.mp4" type="video/mp4" />
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30"></div>
+                            <div class="absolute left-4 top-4 z-20 flex items-center gap-2.5">
+                                <div class="size-9 rounded-full bg-[#ff6423] text-white text-xs font-bold flex items-center justify-center">JK</div>
+                                <div class="text-start">
+                                    <p class="text-sm font-semibold text-white leading-none">James K.</p>
+                                    <p class="mt-1 text-xs text-white/70">Coaching</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl shrink-0 w-56 md:w-64">
+                            <video autoplay muted loop playsinline class="h-80 w-full object-cover" poster="theme/images/event/story-slider-04_poster.jpg">
+                                <source src="theme/videos/story-slider-04.mp4" type="video/mp4" />
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30"></div>
+                            <div class="absolute left-4 top-4 z-20 flex items-center gap-2.5">
+                                <div class="size-9 rounded-full bg-[#ff6423] text-white text-xs font-bold flex items-center justify-center">SW</div>
+                                <div class="text-start">
+                                    <p class="text-sm font-semibold text-white leading-none">Sophie W.</p>
+                                    <p class="mt-1 text-xs text-white/70">Template shop</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl shrink-0 w-56 md:w-64">
+                            <video autoplay muted loop playsinline class="h-80 w-full object-cover" poster="theme/images/event/story-slider-05_poster.jpg">
+                                <source src="theme/videos/story-slider-05.mp4" type="video/mp4" />
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30"></div>
+                            <div class="absolute left-4 top-4 z-20 flex items-center gap-2.5">
+                                <div class="size-9 rounded-full bg-[#ff6423] text-white text-xs font-bold flex items-center justify-center">VH</div>
+                                <div class="text-start">
+                                    <p class="text-sm font-semibold text-white leading-none">Victor H.</p>
+                                    <p class="mt-1 text-xs text-white/70">CBD brand</p>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- feedback-section -->
+    <section id="testimonials" class="relative bg-white overflow-hidden">
+        <div class="container">
+            <!-- Columns: swipe on mobile, 2 on tablet, 3 on desktop -->
+            <div class="testimonials-clip relative overflow-hidden">
+                <div class="testimonials-grid grid grid-cols-2 lg:grid-cols-3 lg:gap-7.5 md:gap-5 gap-3.5">
+                    <div class="lg:space-y-7.5 md:space-y-5 space-y-3.5">
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                I had 47 products and dreaded a Whop plan for each. Wizard done before lunch.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-04.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Marcus T." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Marcus T.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Course creator
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                Stripe shut us down twice for CBD SKUs. Whop stayed live — first month cleared without a freeze.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-05.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Victor H." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Victor H.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            CBD brand
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                I'm not technical. The wizard walked me through API keys in about six minutes.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-06.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Sophie W." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Sophie W.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Template shop
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:space-y-7.5 md:space-y-5 space-y-3.5">
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                We sell Discord memberships and coaching packs. Cart total flows to Whop perfectly.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-07.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Rico M." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Daniel
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Coaching seller
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                We deploy this on client Woo sites. The health dashboard alone cut our support tickets.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-08.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Marcus T." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Marcus T.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Course creator
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                Sandbox mode let us run 20+ test orders before flipping live.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-02.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Hannah B." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Hannah B.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            SaaS seller
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:space-y-7.5 md:space-y-5 space-y-3.5">
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                PayPal flagged our vape line overnight. Back selling with Whop in under a day.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-09.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Rico M." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Rico M.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Vape & e-liquid
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                We run three Woo brands under one lifetime license.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-01.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Mei L." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Mei L.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Multi-brand
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card bg-default-200 md:p-7.5 p-2.5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-default-800 md:text-lg text-sm font-medium leading-snug md:mb-7.5 mb-3.5">
+                                Sold a $497 bundle with a coupon — plugin passed the exact discounted total, no errors.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="md:flex items-center gap-2.5">
+                                    <img src="theme/images/team/avatar-03.webp" class="md:size-12 size-7.5 rounded-full object-cover" alt="Jasmine H." />
+                                    <div class="md:mt-0 mt-1.25">
+                                        <h3 class="md:text-lg text-sm font-medium text-default-900 leading-none">
+                                            Jasmine H.
+                                        </h3>
+                                        <p class="md:text-sm text-xs text-default-500 mt-1">
+                                            Coaching packages
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="group inline-flex md:size-10 size-5.5 items-center justify-center overflow-hidden rounded-full bg-white">
+                                    <div class="relative size-4 overflow-hidden">
+                                        <!-- Default Icon -->
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full transition-transform duration-300 group-hover:-translate-y-[200%]"></i>
+
+                                        <i class="iconify tabler--brand-x-filled size-4 text-default-800 absolute inset-0 h-full w-full translate-y-[200%] transition-transform duration-300 group-hover:translate-y-0"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- faq-section -->
+    <section id="faq" class="bg-body-bg lg:py-25 md:pb-10 py-6">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-3 lg:gap-25 gap-7.5 items-start">
+                <!-- Left Column: Title & Contact Card -->
+                <div class="lg:col-span-5 col-span-1 lg:space-y-20 space-y-10">
+                    <div class="space-y-4">
+                        <span class="inline-block px-5 py-1.5 text-sm font-medium bg-white border border-default-200 text-default-800 rounded-full mb-2.5">Common Questions</span>
+
+                        <h2 class="text-2xl md:text-4xl lg:text-5xl font-medium text-default-950 tracking-normal leading-normal">
+                            Whop Checkout FAQ
+                        </h2>
+                    </div>
+
+                    <!-- Contact Box -->
+                    <div class="bg-white md:p-7.5 p-5 rounded-2xl shadow-xl shadow-zinc-200/50 space-y-6">
+                        <div class="size-12.5 bg-primary-1 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="iconify lucide--headset size-6 text-white"></i>
+                        </div>
+                        <div class="space-y-6">
+                            <h3 class="md:text-2xl text-xl font-medium text-default-950 mb-3.5">
+                                Need help getting set up?
+                            </h3>
+                            <a href="mailto:hello@whopcheckout.com" class="group relative px-8.5 overflow-hidden rounded-full bg-black shadow-xl! text-white inline-flex items-center justify-center hover:scale-95 transition-all duration-300 text-nowrap">
+                                <div class="relative inline-flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                                    <div class="flex items-center gap-3 h-14">
+                                        <span class="font-medium">Email support</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 h-14 absolute top-full">
+                                        <span class="font-medium">Email support</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Accordion Items -->
+                <div class="lg:col-span-7 col-span-2 space-y-4">
+                    <div class="hs-accordion-group lg:col-span-7 lg:space-y-4 space-y-2.5">
+                        <!-- Accordion Item 1 (Open by default) -->
+                        <div class="hs-accordion active bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-one">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-one">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    What is Whop Checkout for WooCommerce?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-one" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-one">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    Whop Checkout is a WordPress plugin that adds Whop as a payment gateway on WooCommerce. It creates a checkout session from the cart total — no plan ID per product.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2 -->
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-two">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-two">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    Do I need a Whop plan ID for every product?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-two">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    No. Checkout sessions are generated dynamically from your cart total.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3 -->
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-three">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-three">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    How much does Whop Checkout cost?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-three">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    One-time payment of $170 for lifetime plugin access, unlimited stores, and email support.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 4 -->
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-four">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-four">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    Does Whop Checkout support sandbox testing?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-four" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-four">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    Yes. The plugin includes sandbox mode and a setup wizard so you can test orders end-to-end before going live.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 5 -->
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-five">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-five">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    Where do customer payments go?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-five" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-five">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    Payments go to your Whop business account, not ours. You connect your own Whop API keys during the 5-minute setup wizard.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-six">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-six">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    Can I use Whop with WooCommerce for high-risk products?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-six" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-six">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    Yes. Many sellers use Whop when Stripe or PayPal restrict their niche. WhopCheckout connects your WooCommerce store to Whop so customers can pay with cards, crypto, and more.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hs-accordion bg-white border border-zinc-100 rounded-2xl shadow-sm hs-accordion-active:shadow-md transition-all duration-300" id="hs-heading-seven">
+                            <button class="hs-accordion-toggle hs-accordion-active:text-default-950 inline-flex items-center justify-between w-full lg:p-5 p-3.5 text-start font-bold text-default-900 transition hover:text-zinc-500" aria-controls="hs-collapse-seven">
+                                <h3 class="text-base md:text-xl font-medium">
+                                    How is WhopCheckout different from embedding Whop plan links?
+                                </h3>
+                                <div class="hs-accordion-active:rotate-45 relative md:size-8.5 size-6.5 bg-default-200 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0">
+                                    <i class="iconify lucide--plus md:size-5 size-3 text-default-800"></i>
+                                </div>
+                            </button>
+                            <div id="hs-collapse-seven" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-heading-seven">
+                                <div class="lg:px-5 lg:pb-5 px-3.5 pb-3.5 text-default-700 md:text-lg text-base md:leading-relaxed leading-normal">
+                                    Manual Whop embeds need a separate plan ID for each product or price. WhopCheckout reads the live WooCommerce cart — coupons, shipping, bundles — and opens one matching Whop checkout session every time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- download-section -->
+    <section id="pricing" class="relative bg-body-bg overflow-hidden pt-20 lg:pt-30 pb-8">
+        <!-- Main Content -->
+        <div class="container relative z-10">
+            <div class="grid grid-cols-1 items-center md:grid-cols-3 md:gap-0 gap-7.5">
+                <!-- Left Column -->
+                <div class="order-1 flex flex-col items-center text-center md:text-left lg:items-start md:me-10">
+                    <h3 class="text-2xl font-medium tracking-tight text-default-900 lg:text-4xl">
+                        Get Whop Checkout for WooCommerce
+                    </h3>
+
+                    <p class="mt-2.5 text-lg text-default-600 lg:mt-5">
+                        One-time purchase · Lifetime access · Unlimited stores.
+                    </p>
+
+                    <div class="mt-3.5 flex flex-col gap-4 lg:mt-8 relative z-40">
+                        <!-- Buy CTA -->
+                        <a href="#pricing" class="plan-checkout group relative inline-flex overflow-hidden rounded-full bg-black lg:px-8.5 px-3.5 text-white shadow-xl transition-all duration-300 hover:scale-95">
+                            <div class="relative flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                                <div class="flex h-14 items-center gap-3">
+                                    <span class="lg:text-base text-sm">Buy now · $170</span>
+                                </div>
+
+                                <div class="absolute top-full flex h-14 items-center gap-3">
+                                    <span class="lg:text-base text-sm">Buy now · $170</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Demo CTA -->
+                        <a href="#demo-modal" data-open-demo class="group relative inline-flex overflow-hidden rounded-full bg-default-200 lg:px-8.5 px-3.5 text-black transition-all duration-300 hover:scale-95">
+                            <div class="relative flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-full">
+                                <div class="flex h-14 items-center gap-2.5">
+                                    <i class="iconify tabler--player-play-filled size-5"></i>
+                                    <span class="lg:text-base text-sm">Watch Demo</span>
+                                </div>
+
+                                <div class="absolute top-full flex h-14 items-center gap-2.5">
+                                    <i class="iconify tabler--player-play-filled size-5"></i>
+                                    <span class="lg:text-base text-sm">Watch Demo</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Center spacer -->
+                <div class="order-3 hidden md:flex md:order-2 items-center justify-center"><div class="size-40 rounded-full bg-[#ff6423]/20 blur-2xl"></div></div>
+
+                <!-- Right Column -->
+                <div class="order-2 flex flex-col items-center md:order-3 lg:items-end md:ms-10">
+                    <div class="text-center lg:max-w-md md:text-start">
+                        <h3 class="mb-5 text-2xl font-medium tracking-tight text-default-900 lg:text-4xl">
+                            One-time purchase · Lifetime · Unlimited stores
+                        </h3>
+                        <ul class="text-default-600 text-left space-y-2 mb-2">
+                            <li>✓ Full plugin + setup wizard</li>
+                            <li>✓ Unlimited stores &amp; products</li>
+                            <li>✓ Sandbox &amp; webhook tools</li>
+                            <li>✓ Email support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+
+            <!-- Blur Overlay -->
+            <div class="absolute lg:-bottom-30 -bottom-18 top-auto left-0 z-20 lg:h-55 md:h-40 h-30 w-full bg-body-bg md:blur-[35px] blur-[20px]">
+            </div>
+        </div>
+
+        <!-- Clouds -->
+        <img src="theme/images/locations/cloud-04.webp" alt="" class="absolute -bottom-12.5 h-72.5 -left-25 w-218 pointer-events-none -z-20" />
+
+        <img src="theme/images/locations/cloud-01.webp" alt="" class="absolute -bottom-25 inset-e-25 -translate-x-1/2 w-224 h-72.5 pointer-events-none lg:z-10 -z-6" />
+
+        <img src="theme/images/locations/cloud-04.webp" alt="" class="absolute -bottom-50 inset-e-0 top-auto w-full h-87.5 pointer-events-none z-0" />
+    </section>
+
+    
+
+    <!-- Swiper JS -->
+    
+
+<footer class="site-footer bg-body-bg pt-8 md:pt-16 lg:pt-20 pb-5">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-4 lg:gap-32 md:gap-12.5 gap-5 justify-between">
+            <div class="lg:col-span-2">
+                <a href="/" class="inline-block mb-4 md:mb-8">
+                    <img src="logo.png" alt="WhopCheckout" class="h-8 md:h-11">
+                </a>
+                <div class="lg:max-w-md">
+                    <h2 class="md:text-2xl text-base mb-1 md:mb-2.5 font-medium">Whop payment gateway for WooCommerce</h2>
+                    <p class="mb-3 md:mb-5 text-sm md:text-lg text-default-500">
+                        <a href="mailto:hello@whopcheckout.com" class="hover:underline">hello@whopcheckout.com</a>
+                    </p>
+                    <form class="footer-newsletter hidden md:flex flex-col lg:items-center items-start gap-4 lg:flex-row">
+                        <input type="email" placeholder="your@email.com" required class="rounded-full border border-default-200 bg-default-200 px-5 py-3 text-default-900 placeholder:text-default-400 focus:outline-none text-base lg:w-lg! transition-all">
+                        <button type="submit" class="w-full md:w-auto whitespace-nowrap rounded-full bg-default-900 px-8 py-3.5 font-medium text-white transition-all hover:scale-95">
+                            Get updates
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-links grid grid-cols-2 gap-4 md:contents">
+                <div>
+                    <h3 class="text-sm md:text-base font-medium text-default-900 mb-2.5 md:mb-5 lg:mb-7.5">Page links</h3>
+                    <div class="flex flex-col gap-1.5 md:gap-2">
+                        <a href="#features" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Features</a>
+                        <a href="#how" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">How it works</a>
+                        <a href="#demo" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Demo</a>
+                        <a href="#pricing" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Pricing</a>
+                        <a href="mailto:hello@whopcheckout.com" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1.5 md:gap-2">
+                    <h3 class="text-sm md:text-base font-medium text-default-900 mb-2.5 md:mb-5 lg:mb-7.5">Support</h3>
+                    <a href="#pricing" class="plan-checkout text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Get plugin</a>
+                    <a href="#faq" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">FAQ</a>
+                    <a href="mailto:hello@whopcheckout.com" class="text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Email support</a>
+                    <a href="/whop-woocommerce-plugin.html" class="footer-seo-link hidden md:inline text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Whop WooCommerce plugin</a>
+                    <a href="/whop-payment-gateway.html" class="footer-seo-link hidden md:inline text-sm md:text-lg text-default-600 hover:text-default-900 hover:underline underline-offset-4 decoration-2 transition-colors">Whop payment gateway</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 md:mt-8 lg:mt-16 border-t border-default-200 pt-4 md:pt-7.5 space-y-2">
+            <p class="text-default-600 text-sm md:text-lg">
+                © 2026 WhopCheckout.com
+            </p>
+            <p class="text-default-500 text-xs md:text-sm leading-relaxed max-w-2xl">
+                WhopCheckout is an independent product developed by a third-party developer.
+                We are not affiliated with, endorsed by, or officially connected to Whop, Inc.
+                “Whop” is a trademark of its respective owner. WooCommerce is a trademark of Automattic Inc.
+                Payments you collect go to your own Whop business account.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- SEO keyword content (crawlable; compact on mobile) -->
+<section id="whop-woocommerce-guide" class="seo-guide bg-white border-t border-default-200 py-6 md:py-12 lg:py-16" aria-label="About Whop Checkout for WooCommerce">
+  <div class="container max-w-3xl">
+    <h2 class="text-lg md:text-3xl font-medium text-default-900 mb-2 md:mb-4">Whop payment gateway for WooCommerce</h2>
+    <p class="seo-guide-lead text-default-700 text-sm md:text-lg leading-relaxed mb-2 md:mb-4">
+      <strong>WhopCheckout</strong> is the Whop WooCommerce plugin that lets stores accept Whop payments without a plan ID per product. Lifetime license $170 —
+      <a class="text-default-900 font-medium underline underline-offset-2" href="#pricing">buy here</a>.
+    </p>
+    <div class="seo-guide-more hidden md:block">
+      <p class="text-default-700 text-base md:text-lg leading-relaxed mb-4">
+        Sellers use Whop for digital products, memberships, coaching, and niches where mainstream gateways struggle.
+        WhopCheckout installs on WordPress, connects your Whop API keys, registers webhooks, and opens a dynamic Whop checkout session from any WooCommerce order total — coupons, shipping, and variants included.
+      </p>
+      <h3 class="text-xl font-medium text-default-900 mt-8 mb-3">Popular Whop + WooCommerce searches we rank for</h3>
+      <ul class="list-disc pl-5 space-y-2 text-default-700 text-base md:text-lg">
+        <li><a class="text-default-900 underline underline-offset-2" href="/whop-woocommerce-plugin.html">Whop WooCommerce plugin</a> — install Whop as a store payment method</li>
+        <li><a class="text-default-900 underline underline-offset-2" href="/whop-payment-gateway.html">Whop payment gateway</a> — cards, crypto, and Whop checkout on Woo</li>
+        <li><a class="text-default-900 underline underline-offset-2" href="/whop-checkout-wordpress.html">Whop checkout WordPress</a> — dynamic sessions, no plan-id spreadsheet</li>
+      </ul>
+      <p class="text-default-700 text-base md:text-lg leading-relaxed mt-6">
+        Price is a one-time <strong>$170 lifetime license</strong> for unlimited stores and products.
+        <a class="text-default-900 font-medium underline underline-offset-2" href="#pricing">Buy Whop Checkout</a>
+        or read the <a class="text-default-900 underline underline-offset-2" href="#faq">Whop Checkout FAQ</a>.
+      </p>
+    </div>
+    <ul class="seo-guide-links md:hidden flex flex-wrap gap-x-3 gap-y-1 text-sm text-default-700 mt-2">
+      <li><a class="underline" href="/whop-woocommerce-plugin.html">WooCommerce plugin</a></li>
+      <li><a class="underline" href="/whop-payment-gateway.html">Payment gateway</a></li>
+      <li><a class="underline" href="/whop-checkout-wordpress.html">WordPress checkout</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Demo video modal (plays on-site) -->
+<div id="demo-modal" role="dialog" aria-modal="true" aria-label="Watch demo" hidden>
+  <div class="demo-modal-dialog">
+    <button type="button" id="demo-modal-close" aria-label="Close video">&times;</button>
+    <div class="demo-modal-frame">
+      <iframe id="demo-modal-iframe" title="WhopCheckout demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  var cfg = window.WHOP_FUNNEL || {};
+  var plan = cfg.plan || {};
+  document.querySelectorAll('a').forEach(function(a){
+    var t = (a.textContent||'').trim();
+    if (plan.checkoutUrl && (t.indexOf('Buy now') !== -1 || t.indexOf('$170') !== -1) && (a.classList.contains('plan-checkout') || t.indexOf('Buy now') !== -1)) {
+      a.href = plan.checkoutUrl;
+      a.setAttribute('rel','noopener');
+      a.setAttribute('target','_blank');
+    }
+  });
+
+  // Mobile menu (no Preline dependency)
+  var btn = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  function closeMenu(){
+    if (!menu || !btn) return;
+    menu.classList.add('hidden');
+    menu.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function openMenu(){
+    if (!menu || !btn) return;
+    menu.classList.remove('hidden');
+    menu.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  if (btn && menu) {
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      if (menu.classList.contains('hidden')) openMenu(); else closeMenu();
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    window.addEventListener('resize', function(){ if (window.innerWidth >= 1024) closeMenu(); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.hs-accordion-toggle').forEach(function(toggle){
+    toggle.addEventListener('click', function(){
+      var item = toggle.closest('.hs-accordion');
+      var panel = item && item.querySelector('.hs-accordion-content');
+      if (!item || !panel) return;
+      var open = !panel.classList.contains('hidden');
+      item.parentElement.querySelectorAll('.hs-accordion').forEach(function(other){
+        other.classList.remove('active');
+        var p = other.querySelector('.hs-accordion-content');
+        if (p) p.classList.add('hidden');
+      });
+      if (!open) {
+        item.classList.add('active');
+        panel.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Tabs
+  document.querySelectorAll('[data-hs-tab]').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var target = tab.getAttribute('data-hs-tab');
+      var group = tab.closest('nav') || tab.parentElement;
+      group.querySelectorAll('[data-hs-tab]').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var panelRoot = document.querySelector(target) && document.querySelector(target).parentElement;
+      if (!panelRoot) return;
+      panelRoot.querySelectorAll('[role="tabpanel"], [id^="tabs-"]').forEach(function(p){
+        if (p.id && p.id.indexOf('tabs-') === 0) p.classList.add('hidden');
+      });
+      var panel = document.querySelector(target);
+      if (panel) panel.classList.remove('hidden');
+    });
+  });
+
+  // On-site demo video modal
+  var demoModal = document.getElementById('demo-modal');
+  var demoFrame = document.getElementById('demo-modal-iframe');
+  var demoClose = document.getElementById('demo-modal-close');
+  var demoUrl = (cfg.videoEmbedUrl || 'https://www.youtube.com/embed/fArc71Mr2ZI').replace('youtube.com', 'youtube-nocookie.com');
+  function openDemo(e){
+    if (e) e.preventDefault();
+    if (!demoModal || !demoFrame) return;
+    var sep = demoUrl.indexOf('?') >= 0 ? '&' : '?';
+    demoFrame.src = demoUrl + sep + 'autoplay=1&rel=0';
+    demoModal.hidden = false;
+    demoModal.classList.add('is-open');
+    document.body.classList.add('demo-modal-open');
+    if (demoClose) demoClose.focus();
+  }
+  function closeDemo(){
+    if (!demoModal || !demoFrame) return;
+    demoModal.classList.remove('is-open');
+    demoModal.hidden = true;
+    demoFrame.src = '';
+    document.body.classList.remove('demo-modal-open');
+  }
+  document.querySelectorAll('[data-open-demo], a[data-toggle="video"]').forEach(function(el){
+    el.addEventListener('click', openDemo);
+  });
+  if (demoClose) demoClose.addEventListener('click', closeDemo);
+  if (demoModal) {
+    demoModal.addEventListener('click', function(e){
+      if (e.target === demoModal) closeDemo();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && demoModal && demoModal.classList.contains('is-open')) closeDemo();
+  });
+})();
+</script>
 </body>
 </html>
